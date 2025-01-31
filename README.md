@@ -178,7 +178,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
   $z_1 = \cos(\theta_1) + i\sin(\theta_1) = \cos(0) + i\sin(0) = 1$<br>
   $z_2 = \cos(\theta_2) + i\sin(\theta_2) = \cos(\pi) + i\sin(\pi) = - 1 + 0 = - 1$
 
-  ![2](./2.png)
+  ![2](./2.jpg)
   
   $---$
 
@@ -192,7 +192,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
   $z_2 = \cos(\theta_2) + i\sin(\theta_2) = \cos(\frac{2\pi}{3}) + i\sin(\frac{2\pi}{3}) = e^{\frac{i2\pi}{3}}$<br>
   $z_3 = \cos(\theta_3) + i\sin(\theta_3) = \cos(\frac{4\pi}{3}) + i\sin(\frac{4\pi}{3}) = e^{\frac{i4\pi}{3}}$
 
-  ![3](./3.png)
+  ![3](./3.jpg)
 
   $---$
 
@@ -208,7 +208,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
   $z_3 = \cos(\theta_3) + i\sin(\theta_3) = \cos(\pi) + i\sin(\pi) = - 1 + 0 = - 1$<br>
   $z_4 = \cos(\theta_4) + i\sin(\theta_4) = \cos(\frac{3\pi}{2}) + i\sin(\frac{3\pi}{2}) = 0 - i = - i$
 
-  ![4](./4.png)
+  ![4](./4.jpg)
 
   Now the process should be more than clear.
 
