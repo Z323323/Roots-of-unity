@@ -154,10 +154,11 @@ If you made it this far you'll agree with me that this is not the way to go to c
   and therefore
 
   $\displaystyle \theta_1 = 0$<br>
-  $\displaystyle \theta_2 = \theta_1 + \frac{2\pi}{n}$<br>
-  $\displaystyle \theta_3 = \theta_2 + \frac{2\pi}{n}$<br>
+  $\displaystyle \theta_2 = \frac{2\pi}{n}$<br>
+  $\displaystyle \theta_3 = \frac{4\pi}{n}$<br>
+  $\displaystyle \theta_4 = \frac{6\pi}{n}$<br>
   $\dots$<br>
-  $\displaystyle \theta_{n - 1} = \theta_{n - 2} + {2\pi}{n}$
+  $\displaystyle \theta_{n} = \frac{(n - 1)2\pi}{n}$
 
   Now we can further analyze the previous cases being aware $z$ is a pure complex number.
 
@@ -172,19 +173,45 @@ If you made it this far you'll agree with me that this is not the way to go to c
   $n = 2$<br>
   $->$<br>
   $\displaystyle \theta_1 = 0$<br>
-  $\displaystyle \theta_2 = \theta_1 + \frac{2\pi}{2} = 0 + \pi = \pi$<br>
+  $\displaystyle \theta_2 = \frac{2\pi}{2} = \pi$<br>
   $->$<br>
   $z_1 = \cos(\theta_1) + i\sin(\theta_1) = \cos(0) + i\sin(0) = 1$<br>
   $z_2 = \cos(\theta_2) + i\sin(\theta_2) = \cos(\pi) + i\sin(\pi) = - 1 + 0 = - 1$
+
+  ![2](./2.png)
   
   $---$
 
   $n = 3$<br>
   $->$<br>
   $\displaystyle \theta_1 = 0$<br>
-  $\displaystyle \theta_2 = \theta_1 + \frac{2\pi}{2} = 0 + \pi = \pi$<br>
+  $\displaystyle \theta_2 = \frac{2\pi}{3}$<br>
+  $\displaystyle \theta_3 = \frac{4\pi}{3}$<br>
   $->$<br>
   $z_1 = \cos(\theta_1) + i\sin(\theta_1) = \cos(0) + i\sin(0) = 1$<br>
-  $z_2 = \cos(\theta_2) + i\sin(\theta_2) = \cos(\pi) + i\sin(\pi) = - 1 + 0 = - 1$
+  $z_2 = \cos(\theta_2) + i\sin(\theta_2) = \cos(\frac{2\pi}{3}) + i\sin(\frac{2\pi}{3}) = e^{\frac{i2\pi}{3}}$<br>
+  $z_3 = \cos(\theta_3) + i\sin(\theta_3) = \cos(\frac{4\pi}{3}) + i\sin(\frac{4\pi}{3}) = e^{\frac{i4\pi}{3}}$
+
+  ![3](./3.png)
+
+  $---$
+
+  $n = 4$<br>
+  $->$<br>
+  $\displaystyle \theta_1 = 0$<br>
+  $\displaystyle \theta_2 = \frac{2\pi}{4} = \frac{\pi}{2}$<br>
+  $\displaystyle \theta_3 = \frac{4\pi}{4} = \pi$<br>
+  $\displaystyle \theta_4 = \frac{6\pi}{4} = \frac{3\pi}{2}$<br>
+  $->$<br>
+  $z_1 = \cos(\theta_1) + i\sin(\theta_1) = \cos(0) + i\sin(0) = 1$<br>
+  $z_2 = \cos(\theta_2) + i\sin(\theta_2) = \cos(\frac{\pi}{2}) + i\sin(\frac{\pi}{2}) = 0 + i = i$<br>
+  $z_3 = \cos(\theta_3) + i\sin(\theta_3) = \cos(\pi) + i\sin(\pi) = - 1 + 0 = - 1$<br>
+  $z_4 = \cos(\theta_4) + i\sin(\theta_4) = \cos(\frac{3\pi}{2}) + i\sin(\frac{3\pi}{2}) = 0 - i = - i$
+
+  ![4](./4.png)
+
+  Now the process should be more than clear.
+
+  Now, consider $n_1, n_2$ where $n_2$ is a multiple of $n_1$, that is, $n_1 | n_2$. We will necessary have 
  
 </p>
