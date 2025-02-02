@@ -246,7 +246,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
   $\displaystyle root_{xq + 1} = \frac{1}{q}$<br>
   $\displaystyle root_{yq + 1} = \frac{1}{q}$
 
-  We define the primitive roots of unity of $n$ as the roots which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because they (the roots of unity non-primitive) will have appeared for every $m$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
+  We define the primitive roots of unity of $n$ as the roots which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because they (the  non-primitive roots of unity) will have appeared for every $m$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
 
   Let's see another example to further clarify $\phi(n)$. Let $n_2 = 12$. We have $1, 2, 3, 4, 6$ which are cofactors, indeed (skipping $n_1 = 1$ and adding $1$ in advance to the result where $\phi(1) = 1$)
 
