@@ -119,7 +119,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
   
 </p>
 
-## Improvement of context and connection with Euler Identity
+## Improvement of context, connection with Euler Identity and primitive roots
 
 <p>
   Let's set up our new scenario and a couple of definitions.
@@ -160,7 +160,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
   $\dots$<br>
   $\displaystyle \theta_{n} = \frac{(n - 1)2\pi}{n}$
 
-  Now we can further analyze the previous cases being aware $z$ is a pure complex number.
+  Now we can further analyze the previous cases being aware $z^{n} = 1$ is a pure complex number.
 
   $n = 1$<br>
   $->$<br>
@@ -210,8 +210,109 @@ If you made it this far you'll agree with me that this is not the way to go to c
 
   ![4](./4.jpg)
 
-  Now the process should be more than clear.
+  Now the process should be more than clear. We can abstract $2i\pi$ for a moment and consider only $k$ and $n$ since the former will be constant.
 
-  Now, consider $n_1, n_2$ where $n_2$ is a multiple of $n_1$, that is, $n_1 | n_2$. We will necessary have 
+  Now, consider $n_1, n_2$ sharing some cofactor $q$ and $n_2 > n_1$, let
+
+  $n_1 = qx$<br>
+  $n_2 = qy$
+
+  then consider
+
+  $\displaystyle \frac{k}{qx}$<br>
+  $and$<br>
+  $\displaystyle \frac{k}{qy}$
+  
+  For two different $k$ (which we know they will be verified since $k$ ranges from $0$ to $n_1 - 1$, and $n_2 - 1$) we will necessarily have
+
+  $\displaystyle root_{x + 1} = \frac{1}{q}$ 
+  
+  for $n_1 = qx$, and
+  
+  $\displaystyle root_{y + 1} = \frac{1}{q}$
+  
+  for $n_2 = qy$, where $+ 1$ is because we start at $k = 0$.
+
+  Now, let's set the hypothesis of $q^{2}$ being a cofactor, and $q$ too. We'll have
+
+  $n_1 = q^{2}x$<br>
+  $n_2 = q^{2}y$<br>
+
+  $->$
+  
+  $\displaystyle root_{x + 1} = \frac{1}{q^{2}}$<br>
+  $\displaystyle root_{y + 1} = \frac{1}{q^{2}}$<br>
+  $and$<br>
+  $\displaystyle root_{xq + 1} = \frac{1}{q}$<br>
+  $\displaystyle root_{yq + 1} = \frac{1}{q}$
+
+  We define the primitive roots of unity of $n$ as the roots which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because they (the roots of unity non-primitive) will have appeared for every $m$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
+
+  Let's see another example to further clarify $\phi(n)$. Let $n_2 = 12$. We have $1, 2, 3, 4, 6$ which are cofactors, indeed (skipping $n_1 = 1$ and adding $1$ in advance to the result where $\phi(1) = 1$)
+
+  $n_1 = 2$<br>
+  $n_2 = 12$<br>
+  $->$<br>
+  $\displaystyle root_{1 + 1} = \frac{1}{2}$<br>
+  $\displaystyle root_{6 + 1} = \frac{1}{2}$
+
+  and $\phi(2) = 1$.
+
+  $n_1 = 3$<br>
+  $n_2 = 12$<br>
+  $->$<br>
+  $\displaystyle root_{1 + 1} = \frac{1}{3}$<br>
+  $\displaystyle root_{4 + 1} = \frac{1}{3}$
+
+  and
  
+  $\displaystyle root_{2 + 1} = \frac{2}{3}$<br>
+  $\displaystyle root_{8 + 1} = \frac{8}{12} = \frac{2}{3}$
+
+  (remember that I'm considering the first root with $k = 0$, this means that the last root won't be $root_{n - 1}$ but $root_{n}$)
+
+  and $\phi(3) = 2$.
+
+  $n_1 = 4$<br>
+  $n_2 = 12$<br>
+  $->$<br>
+  $\displaystyle root_{1 + 1} = \frac{1}{4}$<br>
+  $\displaystyle root_{3 + 1} = \frac{1}{4}$
+
+  and
+
+  $\displaystyle root_{3 + 1} = \frac{3}{4}$<br>
+  $\displaystyle root_{9 + 1} = \frac{9}{12} = \frac{3}{4}$
+
+  and $\phi(4) = 2$, because $\phi(2^{2}) = 2^{2} - 2 = 2$.
+
+  $n_1 = 6$<br>
+  $n_2 = 12$<br>
+  $->$<br>
+  $\displaystyle root_{1 + 1} = \frac{1}{6}$<br>
+  $\displaystyle root_{2 + 1} = \frac{1}{6}$
+
+  and
+
+  $\displaystyle root_{5 + 1} = \frac{5}{6}$<br>
+  $\displaystyle root_{10 + 1} = \frac{10}{12} = \frac{5}{6}$
+
+  and $\phi(6) = \phi(2)\phi(3) = 2$.
+
+  As you can see, this is a concatenation of reasons which starts at $1$, indeed every number share the first root, then every even will share the $n = 2$ roots, then every number which is multiple of $3$ and $2$ will share the $2$ and $3$ roots, which in turn share the $1$ root, and since the $\phi(n)$ function keeps track of this because it's multiplicative then the result follows.
+
+  We can conclude by seeing that 
+
+  $\phi(12) = \phi(2^{2})\phi(3) = 4$
+
+  and the image below which shows the primitive roots of unity of $n = 12$.
+
+  ![12](./12.jpg)
+  
+</p>
+
+## Gaussian Periods
+
+<p>
+  
 </p>
