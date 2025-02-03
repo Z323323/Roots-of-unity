@@ -417,7 +417,7 @@ which look like not being real numbers.
 
   where as you can see we clearly have $\zeta$ along with $\zeta^{16}$ which is not that clear initially. To better clarify everything the picture below shows clearly the previous reasoning about conjugates.
 
-  ![17](./17.png)
+  ![17](./17.jpg)
 
   
   
