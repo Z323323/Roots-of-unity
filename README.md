@@ -6,7 +6,7 @@ This article extends [https://github.com/Z323323/Complex-numbers-background/tree
 
 Wiki reports _"a root of unity is any complex number that yields 1 when raised to some positive integer power n"_.
 
-This means that the roots of unity are the complex solutions to this kind of equations:
+This means that the roots of unity are the solutions to this kind of equations:
 
 $z^{n} = 1$<br>
 $->$<br>
@@ -116,6 +116,22 @@ Solving this kind of equations could enable us to find generators for well defin
  $\displaystyle x_{4,5} = \frac{- \sqrt{5} - 1}{4} \pm \frac{\sqrt{\frac{1}{4} + \frac{5}{4} + \frac{\sqrt{5}}{2} - 4}}{2} = \frac{- \sqrt{5} - 1}{4} \pm \frac{\sqrt{\frac{1}{4} + \frac{5}{4} + \frac{2\sqrt{5}}{4} - \frac{16}{4}}}{2} = \frac{- \sqrt{5} - 1}{4} \pm \frac{\sqrt{1 + 5 + 2\sqrt{5} - 16}}{4} = \frac{- \sqrt{5} - 1 \pm \sqrt{2\sqrt{5} - 10}}{4}$<br>
  
 If you made it this far you'll agree with me that this is not the way to go to compute roots of unity, even though this is a great exercise. Also, we will need to find a way to make these complex solutions to work on multiplicative groups, since the numbers obtained in complex form still don't help us finding our generators.
+
+The last example for $n = 5$ is quite interesting though, since it seems there are no complex solutions involved, while if you look at the next section it will be quite simple to understand that the $4$ non-trivial solutions we derived can't be considered completely real (at least this is what it seems to me at the moment), that is, if you follow through you'll find 
+
+$\displaystyle x_2 = e^{\frac{2i\pi}{5}}$<br>
+$\displaystyle x_3 = e^{\frac{4i\pi}{5}}$<br>
+$\displaystyle x_4 = e^{\frac{6i\pi}{5}}$<br>
+$\displaystyle x_5 = e^{\frac{8i\pi}{5}}$
+
+thus
+
+$\displaystyle x_2 = \cos(\frac{2i\pi}{5}) + i\sin(\frac{2i\pi}{5})$<br>
+$\displaystyle x_3 = \cos(\frac{4i\pi}{5}) + i\sin(\frac{4i\pi}{5})$<br>
+$\displaystyle x_4 = \cos(\frac{6i\pi}{5}) + i\sin(\frac{6i\pi}{5})$<br>
+$\displaystyle x_5 = \cos(\frac{8i\pi}{5}) + i\sin(\frac{8i\pi}{5})$
+
+which look like not being real numbers.
   
 </p>
 
@@ -143,7 +159,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
 
   $z^{n} = 1 \cdot e^{i2k\pi} = e^{i2k\pi} = 1$
 
-  This means that $z$ is a pure complex number (we already knew it since $|z| = 1$, how?) and finding the roots of unity narrows to
+  This means that $z^{n}$ is a pure complex number and finding the roots of unity narrows to
 
   $\displaystyle \cos(\frac{2k\pi}{n}) + i\sin(\frac{2k\pi}{n}) = e^{\frac{i2k\pi}{n}}$
 
@@ -233,7 +249,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
   
   for $n_2 = qy$, where $+ 1$ is because we start at $k = 0$.
 
-  Now, let's set the hypothesis of $q^{2}$ being a cofactor, and $q$ too. We'll have
+  Now, let's set the hypothesis of $q^{2}$ being a cofactor, then $q$ will be a cofactor too and
 
   $n_1 = q^{2}x$<br>
   $n_2 = q^{2}y$<br>
@@ -246,7 +262,7 @@ If you made it this far you'll agree with me that this is not the way to go to c
   $\displaystyle root_{xq + 1} = \frac{1}{q}$<br>
   $\displaystyle root_{yq + 1} = \frac{1}{q}$
 
-  We define the primitive roots of unity of $n$ as the roots which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because they (the  non-primitive roots of unity) will have appeared for every $m$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
+  We define the primitive roots of unity of $n$ as the roots of unity which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because the  non-primitive roots of unity will have appeared for every $m < n$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
 
   Let's see another example to further clarify $\phi(n)$. Let $n_2 = 12$. We have $1, 2, 3, 4, 6$ which are cofactors, indeed (skipping $n_1 = 1$ and adding $1$ in advance to the result where $\phi(1) = 1$)
 
@@ -299,7 +315,9 @@ If you made it this far you'll agree with me that this is not the way to go to c
 
   and $\phi(6) = \phi(2)\phi(3) = 2$.
 
-  As you can see, this is a concatenation of reasons which starts at $1$, indeed every number share the first root, then every even will share the $n = 2$ roots, then every number which is multiple of $3$ and $2$ will share the $2$ and $3$ roots, which in turn share the $1$ root, and since the $\phi(n)$ function keeps track of this because it's multiplicative then the result follows.
+  As you can see, this is a concatenation of reasons which starts at $1$, indeed every number share the first root, then every even number will share the $n = 2$ roots, then every number which is multiple of $3$ and $2$ will share the $2$ and $3$ roots, which in turn share the $1$ root, and since the $\phi(n)$ function keeps track of this because it's multiplicative then the result follows.
+
+  It results now clear that for $n$ which is prime, we will have $\phi(n) = n - 1$ primitive roots of unity, and for $n = qp$ where $q, p$ are primes or simply $gcd(q, p) = 1$ we will have for every $q, p$ primitive root, a corresponding $qp$ primitive root (this is the same as saying there will be $\phi(q)\phi(p)$ primitive roots). 
 
   We can conclude by seeing that 
 
@@ -311,8 +329,134 @@ If you made it this far you'll agree with me that this is not the way to go to c
   
 </p>
 
+## Gauss' heptadecagon
+
+<p>
+  When he was a teenager Gauss found a clever way to compute primitive roots of unity while trying to draw an heptadecagon using a straight-edge and a compass.
+
+  $x^{17} - 1 = 0$<br>
+  $->$<br>
+  $(x - 1)(1 + x + \dots + x^{16}) = 0$
+
+  We know
+
+  $\zeta = e^{\frac{2i\pi}{17}} \neq 1$
+
+  and that the only real solution is $\zeta = 1$ because $17$ is an $odd$ prime (doesn't share $4$ roots), thus
+
+  $1 + x + \dots + x^{16} = 0$<br>
+  $->$<br>
+  $x + \dots + x^{16} = - 1$<br>
+  $->$<br>
+  $\zeta + \dots + \zeta^{16} = - 1$
+
+  We can rewrite the sum of the primitive roots of unity (thus not considering $1$) of $17$ as $x_1 + x_2$ where
+
+  $x_1 = \zeta^{3^{0}} + \zeta^{3^{2}} + \dots + \zeta^{3^{14}}$<br>
+  $x_2 = \zeta^{3^{1}} + \zeta^{3^{3}} + \dots + \zeta^{3^{15}}$
+
+  since we know our roots exponent term $k$ is periodic $\mod 17$, and $3$ is a generator for $Z_{17}^{*}$. Also note that $\displaystyle \frac{2i\pi}{17}$ is abstracted, $e^{n^{z}} = e^{nz}$ implied, $\zeta = e^{\frac{2i\pi}{17}}$, and $a^{p - 1} \equiv 1 \mod p$ is the same as $a^{0}$.
+
+  We can see that since $x_1$ terms exponents are quadratic residues ($3^{0} \equiv 3^{16}$) they will be periodic such that
+
+  $\zeta^{2s}$
+
+  for $s \geq 0$ will produce $x_1$ up to infinity. What really interests us here is that this means that $x_1$ will contain pairs of roots being each other conjugates. The same goes for $x_2$ being defined by
+
+  $\zeta^{2s + 1}$
+
+  for $s \geq 0$.
+
+  The complex conjugate of a complex number $z = x + iy$ is defined as
+
+  $\overline{z} = x - iy$
+
+  that is, is the same number mirrored over the $x - axis$. This means that if this number is a root of unity $\neq 1$ it will be such that
+
+  $\displaystyle z = e^{\frac{2ki\pi}{n}} = \cos(\frac{2k\pi}{n}) + i\sin(\frac{2k\pi}{n})$
+
+  for some $k \neq xn$ for $x \geq 0$, its conjugate will be
+
+  $\displaystyle \overline{z} = e^{- \frac{2ki\pi}{n}} = \cos(- \frac{2k\pi}{n}) + i\sin(- \frac{2k\pi}{n}) = \cos(\frac{2k\pi}{n}) - i\sin(\frac{2k\pi}{n})$
+
+  In general we will always have pairs of conjugates when dealing with roots of unity, if we remove $e^{0}$. A clear example of this is
+
+  $x^{3} - 1 = 0$
+
+  which you can find above along with its picture.
+
+  It's quite intuitive at this point to recognise that $x_1$ and $x_2$ will both contain pairs of conjugates. The process is nontheless not intuitive so I'm going to derive the real structure of $x_1$ and $x_2$ and provide a picture. We had
+
+  $x_1 = \zeta^{3^{0}} + \zeta^{3^{2}} + \dots + \zeta^{3^{14}}$<br>
+  $x_2 = \zeta^{3^{1}} + \zeta^{3^{3}} + \dots + \zeta^{3^{15}}$
+
+  Solving congruences leads to
+
+  $3^{0} = 1 \mod 17$<br>
+  $3^{2} = 9 \mod 17$<br>
+  $3^{4} \equiv 13 \mod 17$<br>
+  $3^{6} \equiv 15 \mod 17$<br>
+  $3^{8} \equiv 16 \mod 17$<br>
+  $3^{10} \equiv 8 \mod 17$<br>
+  $3^{12} \equiv 4 \mod 17$<br>
+  $3^{14} \equiv 2 \mod 17$<br>
+  $---$<br>
+  $3^{1} = 3 \mod 17$<br>
+  $3^{3} \equiv 10 \mod 17$<br>
+  $3^{5} \equiv 5 \mod 17$<br>
+  $3^{7} \equiv 11 \mod 17$<br>
+  $3^{9} \equiv 14 \mod 17$<br>
+  $3^{11} \equiv 7 \mod 17$<br>
+  $3^{13} \equiv 12 \mod 17$<br>
+  $3^{15} \equiv 6 \mod 17$
+
+  hence
+
+  $x_1 = \zeta + \zeta^{9} + \zeta^{13} + \zeta^{15} + \zeta^{16} + \zeta^{8} + \zeta^{4} + \zeta^{2}$<br>
+  $x_2 = \zeta{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6}$
+
+  where as you can see we clearly have $\zeta$ along with $\zeta^{16}$ which is not that clear initially. To better clarify everything the picture below shows clearly the previous reasoning about conjugates.
+
+  ![17](./17.png)
+
+  
+  
+</p>
+
 ## Gaussian Periods
 
 <p>
+  Refer to [https://crypto.stanford.edu/pbc/notes/numbertheory/gaussperiod.html].
+
+  
+
+  Now, consider 
+  
+  $(x_1 - x_2)^{2} = a_0 + a_1\zeta_1^{3^{1}} + a_2\zeta_1^{3^{2}} + \dots + a_{16}\zeta_1^{3^{16}}$
+
+  for integers $a_i$.
+
+  This last statement is really hard to understand, hence I'll try to find the meaning behind this assumption.
+
+  $(x_1 - x_2)^{2} = x_{1}^{2} - 2x_1x_2 + x_{2}^{2}$<br>
+  $x_{1}^{2} = (\zeta_1^{3^{0}} + \zeta_1^{3^{2}} + \dots + \zeta_1^{3^{14}})(\zeta_1^{3^{0}} + \zeta_1^{3^{2}} + \dots + \zeta_1^{3^{14}})$<br>
+  $x_{2}^{2} = (\zeta_1^{3^{1}} + \zeta_1^{3^{3}} + \dots + \zeta_1^{3^{15}})(\zeta_1^{3^{1}} + \zeta_1^{3^{3}} + \dots + \zeta_1^{3^{15}})$<br>
+  $- 2x_1x_2 = -2(\zeta_1^{3^{0}} + \zeta_1^{3^{2}} + \dots + \zeta_1^{3^{14}})(\zeta_1^{3^{1}} + \zeta_1^{3^{3}} + \dots + \zeta_1^{3^{15}})$
+
+  This is not really important but better shows what we have. $\zeta_1^{3^{16}}$ is not a problem since as I said before it's the same as $\zeta_1^{3^{0}}$. Now how can we be sure that $a_{i}$ will be integers?
+
+  To get this consider
+
+  $(\zeta_1^{3^{0}})(\zeta_1^{3^{1}})$
+
+  the rest of those will follow since the only $2$ problems here are to understand
+  
+  - how to substitute an integer where we have some numbers multiplied which should alter the denominator?
+  - how can we be sure that the numerator will be an integer?
+
+  These are the answers
+
+  - we can imagine a
+
   
 </p>
