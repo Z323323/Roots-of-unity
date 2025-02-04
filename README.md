@@ -358,17 +358,17 @@ which look like not being real numbers.
   $x_1 = \zeta^{3^{0}} + \zeta^{3^{2}} + \dots + \zeta^{3^{14}}$<br>
   $x_2 = \zeta^{3^{1}} + \zeta^{3^{3}} + \dots + \zeta^{3^{15}}$
 
-  since we know our roots exponent term $k$ is periodic $\mod 17$, and $3$ is a generator for $Z_{17}^{*}$. Also note that $\displaystyle \frac{2i\pi}{17}$ is abstracted, $e^{n^{z}} = e^{nz}$ implied, $\zeta = e^{\frac{2i\pi}{17}}$, and $a^{p - 1} \equiv 1 \mod p$ is the same as $a^{0}$.
+  since we know our roots exponent term $k$ is periodic $\mod 17$, and $3$ is a generator for $Z_{17}^{*}$. Also note that $\displaystyle \frac{2i\pi}{17}$ is abstracted, $e^{n^{z}} = e^{nz}$ implied, $\zeta = e^{\frac{2i\pi}{17}}$, and $a^{p - 1} \equiv 1 \mod p$ is the same as $a^{0}$ ($3^{0} \equiv 3^{16}$).
 
-  We can see that since $x_1$ terms exponents are quadratic residues ($3^{0} \equiv 3^{16}$) they will be periodic such that
+  We can see that since $x_1$ terms will be periodic such that
 
   $\zeta^{3^{2s}}$
 
-  for $s \geq 0$ will produce $x_1$ up to infinity. What really interests us here is that this means that $x_1$ will contain pairs of roots being each other conjugates. The same goes for $x_2$ being defined by
+  for $2s < 17$. What really interests us here is that this means that $x_1$ will contain pairs of roots being each other conjugates. The same goes for $x_2$ being defined by
 
   $\zeta^{3^{2s + 1}}$
 
-  for $s \geq 0$.
+  for $2s + 1 < 17$.
 
   The complex conjugate of a complex number $z = x + iy$ is defined as
 
@@ -378,7 +378,7 @@ which look like not being real numbers.
 
   $\displaystyle z = e^{\frac{2ki\pi}{n}} = \cos(\frac{2k\pi}{n}) + i\sin(\frac{2k\pi}{n})$
 
-  for some $k \neq xn$ for $x \geq 0$, its conjugate will be
+  for some $k \neq xn, x \geq 0$ and its conjugate will be
 
   $\displaystyle \overline{z} = e^{- \frac{2ki\pi}{n}} = \cos(- \frac{2k\pi}{n}) + i\sin(- \frac{2k\pi}{n}) = \cos(\frac{2k\pi}{n}) - i\sin(\frac{2k\pi}{n})$
 
@@ -418,7 +418,7 @@ which look like not being real numbers.
   $x_1 = \zeta + \zeta^{9} + \zeta^{13} + \zeta^{15} + \zeta^{16} + \zeta^{8} + \zeta^{4} + \zeta^{2}$<br>
   $x_2 = \zeta^{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6}$
 
-  where as you can see we clearly have $\zeta$ along with $\zeta^{16}$ inside $x_1$, which is not that clear initially. To better clarify everything the picture below shows clearly the previous reasoning about conjugates.
+  To better clarify everything the picture below shows clearly the previous reasoning about conjugates.
 
   ![17](./17.jpg)
 
@@ -442,47 +442,11 @@ which look like not being real numbers.
   $-clearerForm>$<br>
   $\displaystyle \frac{2ik_1\pi}{17} + \frac{2ik_2\pi}{17} = \frac{2i(k_1 + k_2)\pi}{17}$
 
-  Now, I'm going to take a different way to solve the chapter which I believe being clearer and easier (I showed the first step of the chapter because it can help figuring out things, and may be helpful to understand Ben's proof). If we consider $x_1x_2$ we have that this last multiplication covers every $x_1$ and $x_2$ term but $x_1$ terms are never multiplied by themselves and the same goes for $x_2$. This means that since we have $x_1$ terms following
-
-  $\zeta^{3^{2s}}$
-
-  structure for $s \geq 0$ and $x_2$ terms following
-
-  $\zeta^{3^{2s + 1}}$
-
-  then $x_1x_2$ terms will follow
-
-  $\zeta^{3^{2s}}\zeta^{3^{2s + 1}} = \zeta^{3(2s) + 3(2s + 1)} = \zeta^{3(4s + 1)} = \zeta^{3^{4s + 1}}$
-
-  We have the following results for $4s + 1 \mod 17$ and $s = \\{0, 1, 2, \dots, \\}$ (calculated until we face a repetition):
-
-  $1$<br>
-  $5$<br>
-  $9$<br>
-  $13$<br>
-  $-$<br>
-  $0$<br>
-  $-$<br>
-  $4$<br>
-  $8$<br>
-  $12$<br>
-  $16$<br>
-  $-$<br>
-  $3$<br>
-  $7$<br>
-  $11$<br>
-  $15$<br>
-  $-$<br>
-  $2$<br>
-  $6$<br>
-  $10$<br>
-  $14$
-
-  that is, the multiplication will produce the whole $\zeta + \zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{15}}$ or equivalently $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}}$, but it's not over, because since the distributive property of the multiplication, the result of $x_1x_2$ will have $64$ elements. Here lies a quite sneaky detail that you might have spot, that is, our form above produces $17$ results not $16$, where we know $0 \equiv 16$. Now, if we manually compute the whole multiplication $(\zeta + \zeta^{9} + \zeta^{13} + \zeta^{15} + \zeta^{16} + \zeta^{8} + \zeta^{4} + \zeta^{2})(\zeta^{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6})$ we will get this result
+  Now, I'm going to take a different way to solve the chapter which I believe being clearer and easier (I showed the first step of the chapter because it can help figuring out things, and may be helpful to understand Ben's proof). If we consider $x_1x_2$ we have that this last multiplication covers every $x_1$ and $x_2$ term, but $x_1$ terms are never multiplied by themselves and the same goes for $x_2$. Also, we have $x_1$ and $x_2$ terms holding their respective conjugates hence we won't have $1$ as result of $\frac{2i(k_1 + k_2)\pi}{17}$, and since the multiplication has distributive property, any result which has multiples of $16$ elements will cover every root of unity with potential repetitions, that is, $x_1x_2$ will produce the whole $\zeta + \zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{15}}$ or equivalently $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}}$, but it's not over, because the result of $x_1x_2$ will have $64$ elements. Now, if we manually compute the whole multiplication $(\zeta + \zeta^{9} + \zeta^{13} + \zeta^{15} + \zeta^{16} + \zeta^{8} + \zeta^{4} + \zeta^{2})(\zeta^{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6})$ we will get this result
 
   ![x1x2](x1x2.jpg)
 
-  because we will either consider $\zeta^{3^{0}}$ or $\zeta^{3^{16}}$ and not both, since they are the same value. Having said so, the result of the multiplication will be the results above ($- 16$ or $- 0$) but repeated $4$ times (since we have $16$ values and $64/4 = 16$). Now, since
+  It's quite clear that we will have $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}}$ repeated $4$ times $(64/4 = 16)$. Now, since
 
   $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}} = x_1 + x_2 = - 1$
 
@@ -490,7 +454,45 @@ which look like not being real numbers.
 
   $x_1x_2 = (- 1) \cdot 4 = - 4$
 
-  The reason why our form could be misleading is because the general form must include $0$ and $16$ since they are the same value.
+  Let's go over. How would you compute the values of $x_1$ and $x_2$ knowing $x_1 + x_2 = a$ and $x_1x_2 = b$? I don't know if I'm stupid or what but I found this challenging, hence I'm delving this below.
+
+  Setting
+
+  $(x - x_1)(x - x_2) = 0$
+
+  we'll find the values of $x$ which are equal to $x_1$ and $x_2$, and solving
+  
+  $x^{2} - xx_2 - xx_1 + x_1x_2 = 0$<br>
+  $->$<br>
+  $x^{2} - x(x_1 + x_2) + x_1x_2 = 0$<br>
+  $->$<br>
+  $x^{2} - x(- 1) + (- 4) = 0$<br>
+  $->$<br>
+  $x^{2} + x - 4 = 0$
+
+  This is the general form of a second degree polynomial $ax^{2} + bx + c = 0$ which can be solved using
+
+  $\displaystyle x_{1,2} = \frac{- b \pm \sqrt{b^{2} - 4ac}}{2a}$<br>
+  $->$<br>
+  $\displaystyle x_1 = \frac{- 1 + \sqrt{1 + 16}}{2} = \frac{- 1 + \sqrt{17}}{2}$<br>
+  $\displaystyle x_2 = \frac{- 1 - \sqrt{1 + 16}}{2} = \frac{- 1 - \sqrt{17}}{2}$
+
+  where $x_1$ is the higher one because looking at the complex plane it's pretty clear that it has less negative terms and more positive ones.
+
+  Let's now split $x_1$ and set
+
+  $y_1 = \zeta^{3^{0}} + \zeta^{3^{4}} + \zeta^{3^{8}} + \zeta^{3^{12}}$<br>
+  $->$<br>
+  $y_1 = \zeta + \zeta^{13} + \zeta^{16} + \zeta^{4}$<br>
+  $y_2 = \zeta^{3^{2}} + \zeta^{3^{6}} + \zeta^{10} + \zeta^{3^{14}}$<br>
+  $->$<br>
+  $y_2 = \zeta^{9} + \zeta^{15} + \zeta^{8} + \zeta^{2}$
+
+  Since $y_1y_2$ must have $16$ terms we end up having
+
+  $y_1y_2 = - 1$
+
+  following the previous reasoning about distributive property.
   
   
 </p>
