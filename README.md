@@ -359,11 +359,11 @@ which look like not being real numbers.
 
   We can see that since $x_1$ terms exponents are quadratic residues ($3^{0} \equiv 3^{16}$) they will be periodic such that
 
-  $\zeta^{2s}$
+  $\zeta^{g^{2s}}$
 
   for $s \geq 0$ will produce $x_1$ up to infinity. What really interests us here is that this means that $x_1$ will contain pairs of roots being each other conjugates. The same goes for $x_2$ being defined by
 
-  $\zeta^{2s + 1}$
+  $\zeta^{g^{2s + 1}}$
 
   for $s \geq 0$.
 
@@ -413,12 +413,77 @@ which look like not being real numbers.
   hence
 
   $x_1 = \zeta + \zeta^{9} + \zeta^{13} + \zeta^{15} + \zeta^{16} + \zeta^{8} + \zeta^{4} + \zeta^{2}$<br>
-  $x_2 = \zeta{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6}$
+  $x_2 = \zeta^{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6}$
 
-  where as you can see we clearly have $\zeta$ along with $\zeta^{16}$ which is not that clear initially. To better clarify everything the picture below shows clearly the previous reasoning about conjugates.
+  where as you can see we clearly have $\zeta$ along with $\zeta^{16}$ inside $x_1$, which is not that clear initially. To better clarify everything the picture below shows clearly the previous reasoning about conjugates.
 
   ![17](./17.jpg)
 
+  Now
+
+  $(x_1 - x_2)^{2} = (x_1 + x_2)^{2} = a_0 + a_1\zeta^{3^{1}} + a_2\zeta^{3^{2}} + \dots + a_{16}\zeta^{3^{16}}$<br>
+  
+  where the second step is because we are basically doing this
+
+  $- \zeta = \overline{\zeta}$<br>
+  $and$<br>
+  $- \overline{\zeta} = \zeta$
+
+  and the third step is because
+
+  $(x_1 + x_2)^{2} = (x_1 + x_2)(x_1 + x_2)$
+
+  and
+  
+  $e^{\frac{2ik_1\pi}{17}}e^{\frac{2ik_2\pi}{17}} = e^{\frac{2i(k_1 + k_2)\pi}{17}}$<br>
+  $-clearerForm>$<br>
+  $\displaystyle \frac{2ik_1\pi}{17} + \frac{2ik_2\pi}{17} = \frac{2i(k_1 + k_2)\pi}{17}$
+
+  Now, if we consider $x_1x_2$ we have that this last multiplication covers every $x_1$ and $x_2$ term but $x_1$ terms are never multiplied by themselves and the same goes for $x_2$. This means that since we have $x_1$ terms following
+
+  $\zeta^{3^{2s}}$
+
+  structure for $s \geq 0$ and $x_2$ terms following
+
+  $\zeta^{3^{2s + 1}}$
+
+  then $x_1x_2$ terms will follow
+
+  $\zeta^{3^{2s}}\zeta^{3^{2s + 1}} = \zeta^{3(2s) + 3(2s + 1)} = \zeta^{3(4s + 1)} = \zeta^{3^{4s + 1}}$
+
+  Since $17 \equiv 1 \mod 4$ we have for $s = \\{0, 1, 2, \dots, \\}$, the following results for $4s + 1 \mod 17$ (calculated until we face a repetition):
+
+  $1$<br>
+  $5$<br>
+  $9$<br>
+  $13$<br>
+  $-$
+  $0$<br>
+  $-$
+  $4$<br>
+  $8$<br>
+  $12$<br>
+  $16$<br>
+  $-$
+  $3$<br>
+  $7$<br>
+  $11$<br>
+  $15$<br>
+  $-$
+  $2$<br>
+  $6$<br>
+  $10$<br>
+  $14$
+
+  that is, the multiplication will produce $a_0 + a_1\zeta^{3^{1}} + a_2\zeta^{3^{2}} + \dots + a_{16}\zeta^{3^{16}}$, but it's not over, because since the distributive property of the multiplication the result $r$ of $x_1x_2$ will have $64$ elements, not $16$ as I showed above. This means that the real result of the multiplication will be the results above but repeated $4$ times (since we have $16$ values above and $64/4 = 16$). Now, since
+
+  $a_0 + a_1\zeta^{3^{1}} + a_2\zeta^{3^{2}} + \dots + a_{16}\zeta^{3^{16}} = - 1$
+
+  and we have this result repeated $4$ it follows that
+
+  $x_1x_2 = (- 1)4 = - 4$
+
+  
   
   
 </p>
