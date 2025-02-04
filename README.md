@@ -329,11 +329,11 @@ which look like not being real numbers.
   
 </p>
 
-## Gauss' heptadecagon
+## Gauss' heptadecagon and gaussian periods
 
 <p>
-  Refer to [https://crypto.stanford.edu/pbc/notes/numbertheory/17gon.html], and [https://s3.us-east-1.amazonaws.com/sjcdigitalarchives/original/4076cf9a600178cf678478821f331c65.pdf].
-  The two linked resources are the exact opposite approach to solve the same problem, that is, one is formal and the other one is raw. I felt free to steal a couple of images from the second link because they were really well made and important (hope this won't cause any problem).
+  Refer to [https://crypto.stanford.edu/pbc/notes/numbertheory/17gon.html], [https://crypto.stanford.edu/pbc/notes/numbertheory/gaussperiod.html], and [https://s3.us-east-1.amazonaws.com/sjcdigitalarchives/original/4076cf9a600178cf678478821f331c65.pdf].
+  The two linked resources about the heptadecagon are the exact opposite approach to solve the same problem, that is, one is formal and the other one is raw. I felt free to steal a couple of images from the second link because they were really well made and important (hope this won't be a problem).
   
   When he was a teenager Gauss found a clever way to compute primitive roots of unity while trying to draw an heptadecagon using a straight-edge and a compass. What we are really interested in is not to draw the heptadecagon but to generalize the tactic Gauss used to find the primitive roots of unity, and extract some valuable results.
 
@@ -492,45 +492,22 @@ which look like not being real numbers.
 
   $y_1y_2 = - 1$
 
-  following the previous reasoning about distributive property.
+  following the previous reasoning about distributive property or manually calculating. Now we could proceed as above to compute $y_1, y_2$ solving a quadratic, but let's go over, since our goal here is to get $\zeta$.
+
+  We can further split $y_1$ and get
+
+  $z_1 = \zeta + \zeta^{16}$
+  $z_2 = \zeta^{13} + \zeta^{4}$
+
+  We can either proceed like above and compute $z_1 + z_2 = y_1$, and $z_1z_2$ manually or proceed, so let's get over. At this point it's quite simple to split $z_1$ and see that
   
-  
-</p>
+  $\displaystyle \zeta + \zeta^{16} = 2\cos(\frac{2\pi}{17})$
 
-## Gaussian Periods
+  which means
 
-<p>
-  Refer to [https://crypto.stanford.edu/pbc/notes/numbertheory/gaussperiod.html].
+  $\displaystyle \zeta = \zeta^{16} = \cos(\frac{2\pi}{17})$
 
-  
-
-  Now, consider 
-  
-  $(x_1 - x_2)^{2} = a_0 + a_1\zeta_1^{3^{1}} + a_2\zeta_1^{3^{2}} + \dots + a_{16}\zeta_1^{3^{16}}$
-
-  for integers $a_i$.
-
-  This last statement is really hard to understand, hence I'll try to find the meaning behind this assumption.
-
-  $(x_1 - x_2)^{2} = x_{1}^{2} - 2x_1x_2 + x_{2}^{2}$<br>
-  $x_{1}^{2} = (\zeta_1^{3^{0}} + \zeta_1^{3^{2}} + \dots + \zeta_1^{3^{14}})(\zeta_1^{3^{0}} + \zeta_1^{3^{2}} + \dots + \zeta_1^{3^{14}})$<br>
-  $x_{2}^{2} = (\zeta_1^{3^{1}} + \zeta_1^{3^{3}} + \dots + \zeta_1^{3^{15}})(\zeta_1^{3^{1}} + \zeta_1^{3^{3}} + \dots + \zeta_1^{3^{15}})$<br>
-  $- 2x_1x_2 = -2(\zeta_1^{3^{0}} + \zeta_1^{3^{2}} + \dots + \zeta_1^{3^{14}})(\zeta_1^{3^{1}} + \zeta_1^{3^{3}} + \dots + \zeta_1^{3^{15}})$
-
-  This is not really important but better shows what we have. $\zeta_1^{3^{16}}$ is not a problem since as I said before it's the same as $\zeta_1^{3^{0}}$. Now how can we be sure that $a_{i}$ will be integers?
-
-  To get this consider
-
-  $(\zeta_1^{3^{0}})(\zeta_1^{3^{1}})$
-
-  the rest of those will follow since the only $2$ problems here are to understand
-  
-  - how to substitute an integer where we have some numbers multiplied which should alter the denominator?
-  - how can we be sure that the numerator will be an integer?
-
-  These are the answers
-
-  - we can imagine a
-
+  which is quite disappointing since I could have derived this without all other effort :'), but we learnt something for sure.
   
 </p>
+
