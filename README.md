@@ -332,7 +332,10 @@ which look like not being real numbers.
 ## Gauss' heptadecagon
 
 <p>
-  When he was a teenager Gauss found a clever way to compute primitive roots of unity while trying to draw an heptadecagon using a straight-edge and a compass.
+  Refer to [https://crypto.stanford.edu/pbc/notes/numbertheory/17gon.html], and [https://s3.us-east-1.amazonaws.com/sjcdigitalarchives/original/4076cf9a600178cf678478821f331c65.pdf].
+  The two linked resources are the exact opposite approach to solve the same problem, that is, one is formal and the other one is raw. I felt free to steal a couple of images from the second link because they were really well made and important (hope this won't cause any problem).
+  
+  When he was a teenager Gauss found a clever way to compute primitive roots of unity while trying to draw an heptadecagon using a straight-edge and a compass. What we are really interested in is not to draw the heptadecagon but to generalize the tactic Gauss used to find the primitive roots of unity, and extract some valuable results.
 
   $x^{17} - 1 = 0$<br>
   $->$<br>
@@ -359,11 +362,11 @@ which look like not being real numbers.
 
   We can see that since $x_1$ terms exponents are quadratic residues ($3^{0} \equiv 3^{16}$) they will be periodic such that
 
-  $\zeta^{g^{2s}}$
+  $\zeta^{3^{2s}}$
 
   for $s \geq 0$ will produce $x_1$ up to infinity. What really interests us here is that this means that $x_1$ will contain pairs of roots being each other conjugates. The same goes for $x_2$ being defined by
 
-  $\zeta^{g^{2s + 1}}$
+  $\zeta^{3^{2s + 1}}$
 
   for $s \geq 0$.
 
@@ -419,7 +422,7 @@ which look like not being real numbers.
 
   ![17](./17.jpg)
 
-  Now
+  Now Ben starts by showing
 
   $(x_1 - x_2)^{2} = (x_1 + x_2)^{2} = a_0 + a_1\zeta^{3^{1}} + a_2\zeta^{3^{2}} + \dots + a_{16}\zeta^{3^{16}}$<br>
   
@@ -439,7 +442,7 @@ which look like not being real numbers.
   $-clearerForm>$<br>
   $\displaystyle \frac{2ik_1\pi}{17} + \frac{2ik_2\pi}{17} = \frac{2i(k_1 + k_2)\pi}{17}$
 
-  Now, if we consider $x_1x_2$ we have that this last multiplication covers every $x_1$ and $x_2$ term but $x_1$ terms are never multiplied by themselves and the same goes for $x_2$. This means that since we have $x_1$ terms following
+  Now, I'm going to take a different way to solve the chapter which I believe being clearer and easier (I showed the first step of the chapter because it can help figuring out things, and may be helpful to understand Ben's proof). If we consider $x_1x_2$ we have that this last multiplication covers every $x_1$ and $x_2$ term but $x_1$ terms are never multiplied by themselves and the same goes for $x_2$. This means that since we have $x_1$ terms following
 
   $\zeta^{3^{2s}}$
 
@@ -457,7 +460,7 @@ which look like not being real numbers.
   $5$<br>
   $9$<br>
   $13$<br>
-  $-$
+  $-$<br>
   $0$<br>
   $-$<br>
   $4$<br>
@@ -475,11 +478,11 @@ which look like not being real numbers.
   $10$<br>
   $14$
 
-  that is, the multiplication will produce the whole $\zeta + \zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{15}}$ or equivalently $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}}$, but it's not over, because since the distributive property of the multiplication the result of $x_1x_2$ will have $64$ elements. Here lies a quite sneaky detail that you might have spot, that is, our form above produces $17$ results not $16$ where we know $0 \equiv 16$. Now, if we manually compute the whole multiplication $(\zeta + \zeta^{9} + \zeta^{13} + \zeta^{15} + \zeta^{16} + \zeta^{8} + \zeta^{4} + \zeta^{2})(\zeta^{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6})$ we will get this result
+  that is, the multiplication will produce the whole $\zeta + \zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{15}}$ or equivalently $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}}$, but it's not over, because since the distributive property of the multiplication, the result of $x_1x_2$ will have $64$ elements. Here lies a quite sneaky detail that you might have spot, that is, our form above produces $17$ results not $16$, where we know $0 \equiv 16$. Now, if we manually compute the whole multiplication $(\zeta + \zeta^{9} + \zeta^{13} + \zeta^{15} + \zeta^{16} + \zeta^{8} + \zeta^{4} + \zeta^{2})(\zeta^{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6})$ we will get this result
 
   ![x1x2](x1x2.jpg)
 
-  which clearly show that we will either have $16$ or $0$ in the above result, not both. Having said so, the result of the multiplication will be the results above ($- 16$ or $- 0$) but repeated $4$ times (since we have $16$ values above and $64/4 = 16$). Now, since
+  because we will either consider $\zeta^{3^{0}}$ or $\zeta^{3^{16}}$ and not both, since they are the same value. Having said so, the result of the multiplication will be the results above ($- 16$ or $- 0$) but repeated $4$ times (since we have $16$ values and $64/4 = 16$). Now, since
 
   $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}} = x_1 + x_2 = - 1$
 
@@ -487,7 +490,7 @@ which look like not being real numbers.
 
   $x_1x_2 = (- 1) \cdot 4 = - 4$
 
-  
+  The reason why our form could be misleading is because the general form must include $0$ and $16$ since they are the same value.
   
   
 </p>
