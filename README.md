@@ -451,7 +451,7 @@ which look like not being real numbers.
 
   $\zeta^{3^{2s}}\zeta^{3^{2s + 1}} = \zeta^{3(2s) + 3(2s + 1)} = \zeta^{3(4s + 1)} = \zeta^{3^{4s + 1}}$
 
-  Since $17 \equiv 1 \mod 4$ we have for $s = \\{0, 1, 2, \dots, \\}$, the following results for $4s + 1 \mod 17$ (calculated until we face a repetition):
+  We have the following results for $4s + 1 \mod 17$ and $s = \\{0, 1, 2, \dots, \\}$ (calculated until we face a repetition):
 
   $1$<br>
   $5$<br>
@@ -459,29 +459,33 @@ which look like not being real numbers.
   $13$<br>
   $-$
   $0$<br>
-  $-$
+  $-$<br>
   $4$<br>
   $8$<br>
   $12$<br>
   $16$<br>
-  $-$
+  $-$<br>
   $3$<br>
   $7$<br>
   $11$<br>
   $15$<br>
-  $-$
+  $-$<br>
   $2$<br>
   $6$<br>
   $10$<br>
   $14$
 
-  that is, the multiplication will produce $a_0 + a_1\zeta^{3^{1}} + a_2\zeta^{3^{2}} + \dots + a_{16}\zeta^{3^{16}}$, but it's not over, because since the distributive property of the multiplication the result $r$ of $x_1x_2$ will have $64$ elements, not $16$ as I showed above. This means that the real result of the multiplication will be the results above but repeated $4$ times (since we have $16$ values above and $64/4 = 16$). Now, since
+  that is, the multiplication will produce the whole $\zeta + \zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{15}}$ or equivalently $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}}$, but it's not over, because since the distributive property of the multiplication the result of $x_1x_2$ will have $64$ elements. Here lies a quite sneaky detail that you might have spot, that is, our form above produces $17$ results not $16$ where we know $0 \equiv 16$. Now, if we manually compute the whole multiplication $(\zeta + \zeta^{9} + \zeta^{13} + \zeta^{15} + \zeta^{16} + \zeta^{8} + \zeta^{4} + \zeta^{2})(\zeta^{3} + \zeta^{10} + \zeta^{5} + \zeta^{11} + \zeta^{14} + \zeta^{7} + \zeta^{12} + \zeta^{6})$ we will get this result
 
-  $a_0 + a_1\zeta^{3^{1}} + a_2\zeta^{3^{2}} + \dots + a_{16}\zeta^{3^{16}} = - 1$
+  ![x1x2](x1x2.jpg)
 
-  and we have this result repeated $4$ it follows that
+  which clearly show that we will either have $16$ or $0$ in the above result, not both. Having said so, the result of the multiplication will be the results above ($- 16$ or $- 0$) but repeated $4$ times (since we have $16$ values above and $64/4 = 16$). Now, since
 
-  $x_1x_2 = (- 1)4 = - 4$
+  $\zeta^{3^{1}} + \zeta^{3^{2}} + \dots + \zeta^{3^{16}} = x_1 + x_2 = - 1$
+
+  and we have this result repeated $4$ times (just look at the first two lines of the picture above) it follows that
+
+  $x_1x_2 = (- 1) \cdot 4 = - 4$
 
   
   
