@@ -399,12 +399,12 @@ which are not real numbers.
 
   We can clearly see that there's a direct relation between sets mapping primitive roots of $n$ of degree $i$ and the $i-nt\lambda$ square roots of $1$ in $Z_{\phi(n)}^{\ast}$ which are identified by exponents of $\zeta$. Or equivalently that there is an inverse relation between the solutions of the $nt\lambda$ root of $1$ aka $\zeta_{1,2, \dots}$ being elevated at $i$ and the solutions of the $nt\lambda$ root of $1$ being elevated at $i$ in $Z_{\phi(n)}^{\ast}$. We can consider $\zeta$ being defined in $\phi(n)$ different ways if we consider the roots of unity of $Z_{\phi(n)}^{\ast}$, for which the same structure above applies for $i$ powers but inversed, that is, we know that every $\zeta$ defined in $H$ will produce $1$ at the $\phi(n)$ power in $Z_{\phi(n)}^{\ast}$, thus $Z_{\phi(n)}^{\ast}(|H_{\phi(n)}|) = \phi(n)$, and
 
-  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{1}|) = \frac{\phi(n)}{|H|} = 1$<br>
+  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{1}|) = \frac{\phi(n)}{|H|} = \frac{\phi(n)}{\phi(n)} = 1$<br>
   $\displaystyle Z_{\phi(n)}^{\ast}(|H_{2}|) = \frac{\phi(n)}{|H_2|} = \frac{\phi(n)}{\frac{\phi(n}{2}} = 2$<br>
-  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{4}|) = \frac{\phi(n)}{|H_4|} = \frac{\phi(n)}{\frac{\phi(n}{4}} = 4$
-
-  and so on.
-
+  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{4}|) = \frac{\phi(n)}{|H_4|} = \frac{\phi(n)}{\frac{\phi(n}{4}} = 4$<br>
+  $\dots$<br>
+  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{\phi(n)}|) = \frac{\phi(n)}{1} = \phi(n)$<br>
+  
   We can go over for the moment and get back to our complex analysis.
 
   $-----$
