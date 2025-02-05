@@ -357,18 +357,36 @@ which are not real numbers.
   $x_1 = \zeta^{3^{0}} + \zeta^{3^{2}} + \dots + \zeta^{3^{14}}$<br>
   $x_2 = \zeta^{3^{1}} + \zeta^{3^{3}} + \dots + \zeta^{3^{15}}$
 
-  since we know our roots exponent term $k$ is periodic $\mod 17$, and $3$ is a generator for $Z_{17}^{*}$. Also note that $\displaystyle \frac{2i\pi}{17}$ is abstracted, $e^{n^{z}} = e^{nz}$ implied, $\zeta = e^{\frac{2i\pi}{17}}$, and $a^{p - 1} \equiv 1 \mod p$ is the same as $a^{0}$ ($3^{0} \equiv 3^{16}$).
+  since we know our roots exponent term $k$ is periodic $\mod 17$, and $3$ is a generator for $Z_{17}^{*}$. Also note that $\displaystyle \frac{2i\pi}{17}$ is abstracted, $e^{n^{z}} = e^{nz}$ implied, $\zeta = e^{\frac{2i\pi}{17}}$, and $a^{p - 1} \equiv 1 \mod p$ is the same as $a^{0}$ ($3^{0} \equiv 3^{16} \mod 17$).
 
-  We can see that since $x_1$ terms will be such that
+  We can see that $x_1$ terms will be such that
 
-  $\zeta^{3^{2s}}$
+  $\zeta^{3^{2s} \mod 17}$
 
-  for $2s < 17$. The same goes for $x_2$ being defined by
+  for $s \geq 0$. The same goes for $x_2$ being defined by
 
-  $\zeta^{3^{2s + 1}}$
+  $\zeta^{3^{2s + 1} \mod 17}$
 
-  for $2s + 1 < 17$.
+  You might have spot that a morphism lies here. Having abstracted $\displaystyle \frac{2i\pi}{17}$ what really matters is decided by $G^{s \cdot deg\zeta} \mod 17$ where $G = 3$ here.
+  
+  We can observe that there exist a mapping between the number of primitive roots of unity mapped by $G^{\s \cdot deg\zeta} \mod 17$ and the ones of subgroups of $Z_{17}^{\ast}$. To explain this behaviour informally, it's like if $\zeta$ represents the $17 - 1$ root of $1$ hence any element of $Z_{17}^{\ast}$, and $\zeta^{2}$ represents the $(17 - 1)/2$ root of $1$ hence any element of $Z_{17}^{\ast}$ which equal $1$ being elevated at $(17 - 1)/2$. Then the reasoning is basically the same for the other powers, that is $\zeta^{4}$ is the $(17 - 1)/4$ root of $1$, thus every element which being elevated at $(17 - 1)/4$ produce $1$ and so on until we get $16 / 16 = 1$ where the only element which being elevated at $1$ produce $1$ is obviously $1$.
 
+  $\zeta^{1} = \sqrt[17]{1} \mapsto G^{s \cdot 1} \mod 17$
+
+  indeed, if we solve for any generator $G$, and $s \geq 1$ is quite trivial to see that it will build the entire $Z_{17}$ set which has sense, since every element of the set is a $17 - 1$th root of $1$ and $17$th root of itself. If we keep at it we get
+
+  $\displaystyle \zeta^{2} = \sqrt[\frac{2}{17}]{1} \mapsto G^{2s} \mod 17$
+
+  
+  
+  $\displaystyle \zeta^{2} = \sqrt[\frac{2}{17}]{1} \equiv G^{2s} \mod 17$
+  
+  If we set
+
+  $\zeta^{y} \equiv G^{2}$
+
+  which basically means that the $nt\lambda$ root of any
+   
   What really interests us here is that this means that $x_1$ and $x_2$ will contain pairs of roots being each other conjugates. 
 
   The complex conjugate of a complex number $z = x + iy$ is defined as
@@ -520,7 +538,7 @@ which are not real numbers.
   $\displaystyle G^{2^{4}k} \mod p \equiv \zeta^{3^{0}, 3^{16}}$<br>
   $1 = \zeta$
 
-  basically enables us to find every even nth root of unity of $Z_{17}^{\ast}$, that is, every root of $1$. And since $\phi(17) = 16$, by Lagrange theorem we know that we will have ones only for $even$ orders and this means that finding those roots basically enables us to find every root of unity of $Z_{17}^{\ast}$. This also means that every number which doesn't appear in the set of roots will be a generator. You can try this using Zn.py, it will be quite straightforward and magical. We are basically reaching the almighty power on subgroups with this result but it's always better to keep calm because $Z_{17}^{\ast}$ is a special group because $\phi(17) = 2^{4}$. For subgroups's complex phis the reasoning will be harder for sure.
+  basically enables us to find every even nth root of unity of $Z_{17}^{\ast}$, that is, every root of $1 \mod 17$. And since $\phi(17) = 2^{4}$, by Lagrange theorem we know that we will have ones only for $even$ orders and this means that finding those roots basically enables us to find every root of unity of $Z_{17}^{\ast}$. This also means that every number which doesn't appear in the set of roots will be a generator. You can try this using Zn.py, it will be quite straightforward and magical. We are basically reaching the almighty power on subgroups with this result but it's always better to keep calm because $Z_{17}^{\ast}$ is a special group since $\phi(17) = 2^{4}$. For groups' complex phis the reasoning will be harder for sure.
   
 </p>
 
