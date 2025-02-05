@@ -383,29 +383,57 @@ which are not real numbers.
 
   $H_2 = \\{\zeta^{G^{2} \mod n}, \zeta^{G^{4} \mod n}, \dots, \zeta^{G^{\phi(n)} \mod n}\\}$
 
-  that is, $\displaystyle |H_2| = \frac{|H|}{2}$. If we keep reasoning this way we get
+  and
+  
+  $\displaystyle |H_2| = \frac{|H|}{2} = \frac{\phi(n)}{2}$
+  
+  If we keep reasoning this way we get [ setting the hypothesis $4 | \phi(n)$ ]
 
   $H_4 = \\{\zeta^{G^{4} \mod n}, \zeta^{G^{8} \mod n}, \dots, \zeta^{G^{\phi(n)} \mod n}\\}$
 
-  and $\displaystyle |H_4| = \frac{|H|}{4}$, and
+  and 
+  
+  $\displaystyle |H_4| = \frac{|H|}{4} = \frac{\phi(n)}{4}$
+  
+  and
 
   $H_{\phi(n)} = \\{\zeta^{G^{\phi(n)} \mod n} = \zeta^{1} = \zeta\\}$
 
-  and 
+  with 
   
-  $\displaystyle |H_{\phi(n)}| = \frac{|H|}{\phi(n)} = 1$
-  
-  since $|H| = \phi(n)$. 
+  $\displaystyle |H_{\phi(n)}| = \frac{|H|}{\phi(n)} = \frac{\phi(n)}{\phi(n)} = 1$
 
-  We can clearly see that there's a direct relation between sets mapping primitive roots of $n$ of degree $i$ and the $i-nt\lambda$ square roots of $1$ in $Z_{\phi(n)}^{\ast}$ which are identified by exponents of $\zeta$. Or equivalently that there is an inverse relation between the solutions of the $nt\lambda$ root of $1$ aka $\zeta_{1,2, \dots}$ being elevated at $i$ and the solutions of the $nt\lambda$ root of $1$ being elevated at $i$ in $Z_{\phi(n)}^{\ast}$. We can consider $\zeta$ being defined in $\phi(n)$ different ways if we consider the roots of unity of $Z_{\phi(n)}^{\ast}$, for which the same structure above applies for $i$ powers but inversed, that is, we know that every $\zeta$ defined in $H$ will produce $1$ at the $\phi(n)$ power in $Z_{\phi(n)}^{\ast}$, thus $Z_{\phi(n)}^{\ast}(|H_{\phi(n)}|) = \phi(n)$, and
+  We can clearly see that there is a direct relation between the primitive roots of unity of $n$, that is, $\zeta_{1,2, \dots}$, and the roots of unity of $\phi(n)$ in $Z_{\phi(n)}^{\ast}$. This means that computing the squares for the primitive roots of unity of $n$ is the same as finding the roots of unity of $\displaystyle \frac{\phi(n)}{2}$ in $Z_{\phi(n)}^{\ast}$ because
 
-  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{1}|) = \frac{\phi(n)}{|H|} = \frac{\phi(n)}{\phi(n)} = 1$<br>
-  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{2}|) = \frac{\phi(n)}{|H_2|} = \frac{\phi(n)}{\frac{\phi(n}{2}} = 2$<br>
-  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{4}|) = \frac{\phi(n)}{|H_4|} = \frac{\phi(n)}{\frac{\phi(n}{4}} = 4$<br>
-  $\dots$<br>
-  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{\phi(n)}|) = \frac{\phi(n)}{1} = \phi(n)$<br>
+  $\displaystyle (root_{\phi(n)}(n))^{2} = root_{\frac{\phi(n)}{2}}(n)$
+
+  I had to use this form for the root because the rendering of the root symbol is messed up in Markdown.
+
+  We can conclude that our resulting set of exponents for $H_2$ represents the roots of unity of $\frac{\phi(n)}{2}$ in $Z_{\phi(n)}^{\ast}$. If we keep making the square or cube or quartic or quintic or whatever number we know divides $\phi(n)$ we can basically get every generator for any subgroup of $Z_{\phi(n)}^{\ast}$ as long as we know the divisors, but note that in order to know the generators for a subgroup of order $o | \phi(n)$ we won't compute $H_o$, instead, we will need to do
+
+  $\displaystyle \frac{\phi(n)}{o} = o_r$
+
+  and then compute $H_{o_{r}}$, because
+
+  $\displaystyle (root_{\phi(n)}(n))^{o_r} = root_{\frac{\phi(n)}{o_r}}(n) = root_{o}(n)$
+
+  #### Ex. $p = 79$
+
+  $\phi(79) = 78$<br>
+  $78 = 2 \cdot 3 \cdot 13$
+
+  We want to know the generators for the subgroups of order $13$, that is, following our reasoning this means to find
+
+  $\displaystyle \frac{\phi(n)}{o} = o_r = \frac{78}{13} = 6$<br>
+  $->$<br>
+  $H_{6} = \\{G^{6} \mod 79, G^{12} \mod 79, G^{18} \mod 79, \dots, G^{78} \equiv 1 \mod 78\\}$
+
+  We have $3$ as generator for $Z_{79}^{\ast}$ hence
+
+  $H_{6} = \\{3^{6} \mod 79, 3^{12} \mod 79, 3^{18} \mod 79, \dots, 3^{78} \equiv 1 \mod 78\\}$<br>
+  $H_{6} = \\{18, 8, 65, 64, 46, 38, 52, 67, 21, 62, 10, 22, 1}$<br>
   
-  We can go over for the moment and get back to our complex analysis.
+  Now we can get back to our complex analysis.
 
   $-----$
   
