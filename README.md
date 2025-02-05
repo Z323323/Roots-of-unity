@@ -8,15 +8,14 @@ Wiki reports _"a root of unity is any complex number that yields 1 when raised t
 
 This means that the roots of unity are the solutions to this kind of equations:
 
-$z^{n} = 1$<br>
-$->$<br>
-$z = \sqrt[n]{1}$
+$z^{n} = 1$
 
 or equivalently
 
 $z^{n} - 1 = 0$
 
-Solving this kind of equations could enable us to find generators for well defined (we know the order of them, but we don't know the generators until we solve the roots of unity) multiplicative subgroups, which by the way, before approaching this topic, I believed impossible (indeed it's going to be really hard).
+$->$<br>
+$z = \sqrt[n]{1}$
 
 </p>
 
@@ -115,9 +114,9 @@ Solving this kind of equations could enable us to find generators for well defin
  $\displaystyle x_{2,3} = \frac{\sqrt{5} - 1}{4} \pm \frac{\sqrt{\frac{1}{4} + \frac{5}{4} - \frac{\sqrt{5}}{2} - 4}}{2} = \frac{\sqrt{5} - 1}{4} \pm \frac{\sqrt{\frac{1}{4} + \frac{5}{4} - \frac{2\sqrt{5}}{4} - \frac{16}{4}}}{2} = \frac{\sqrt{5} - 1}{4} \pm \frac{\sqrt{1 + 5 - 2\sqrt{5} - 16}}{4} = \frac{\sqrt{5} - 1 \pm \sqrt{- 2\sqrt{5} - 10}}{4}$<br>
  $\displaystyle x_{4,5} = \frac{- \sqrt{5} - 1}{4} \pm \frac{\sqrt{\frac{1}{4} + \frac{5}{4} + \frac{\sqrt{5}}{2} - 4}}{2} = \frac{- \sqrt{5} - 1}{4} \pm \frac{\sqrt{\frac{1}{4} + \frac{5}{4} + \frac{2\sqrt{5}}{4} - \frac{16}{4}}}{2} = \frac{- \sqrt{5} - 1}{4} \pm \frac{\sqrt{1 + 5 + 2\sqrt{5} - 16}}{4} = \frac{- \sqrt{5} - 1 \pm \sqrt{2\sqrt{5} - 10}}{4}$<br>
  
-If you made it this far you'll agree with me that this is not the way to go to compute roots of unity, even though this is a great exercise. Also, we will need to find a way to make these complex solutions to work on multiplicative groups, since the numbers obtained in complex form still don't help us finding our generators.
+If you made it this far you'll agree with me that this is not the way to go to compute roots of unity, even though this is a great exercise. Also, we will need to find a way to make these complex solutions to work on multiplicative groups, since the numbers obtained in complex form still don't help us.
 
-The last example for $n = 5$ is quite interesting though, since it seems there are no complex solutions involved, while if you look at the next section it will be quite simple to understand that the $4$ non-trivial solutions we derived can't be considered completely real (at least this is what it seems to me at the moment), that is, if you follow through you'll find 
+The last example for $n = 5$ is quite interesting though, since it seems there are no complex solutions involved, while if you look at the next section it will be quite simple to understand that the $4$ non-trivial solutions we derived can't be considered completely real, that is, if you follow through you'll find 
 
 $\displaystyle x_2 = e^{\frac{2i\pi}{5}}$<br>
 $\displaystyle x_3 = e^{\frac{4i\pi}{5}}$<br>
@@ -131,7 +130,7 @@ $\displaystyle x_3 = \cos(\frac{4i\pi}{5}) + i\sin(\frac{4i\pi}{5})$<br>
 $\displaystyle x_4 = \cos(\frac{6i\pi}{5}) + i\sin(\frac{6i\pi}{5})$<br>
 $\displaystyle x_5 = \cos(\frac{8i\pi}{5}) + i\sin(\frac{8i\pi}{5})$
 
-which look like not being real numbers.
+which are not real numbers.
   
 </p>
 
@@ -360,15 +359,17 @@ which look like not being real numbers.
 
   since we know our roots exponent term $k$ is periodic $\mod 17$, and $3$ is a generator for $Z_{17}^{*}$. Also note that $\displaystyle \frac{2i\pi}{17}$ is abstracted, $e^{n^{z}} = e^{nz}$ implied, $\zeta = e^{\frac{2i\pi}{17}}$, and $a^{p - 1} \equiv 1 \mod p$ is the same as $a^{0}$ ($3^{0} \equiv 3^{16}$).
 
-  We can see that since $x_1$ terms will be periodic such that
+  We can see that since $x_1$ terms will be such that
 
   $\zeta^{3^{2s}}$
 
-  for $2s < 17$. What really interests us here is that this means that $x_1$ will contain pairs of roots being each other conjugates. The same goes for $x_2$ being defined by
+  for $2s < 17$. The same goes for $x_2$ being defined by
 
   $\zeta^{3^{2s + 1}}$
 
   for $2s + 1 < 17$.
+
+  What really interests us here is that this means that $x_1$ and $x_2$ will contain pairs of roots being each other conjugates. 
 
   The complex conjugate of a complex number $z = x + iy$ is defined as
 
@@ -508,6 +509,18 @@ which look like not being real numbers.
   $\displaystyle \zeta = \zeta^{16} = \cos(\frac{2\pi}{17})$
 
   which is quite disappointing since I could have derived this without all other effort :'), but we learnt something for sure.
+
+  Let's now try to extract something valuable for our beloved multiplicative groups. 
+  
+  Let $p = 17, k \geq 0$, and $G$ some generator for $Z_{17}^{\ast}$, computing
+
+  $\displaystyle G^{2^{1}k} \mod p \equiv \zeta^{3^{0}, 3^{2}, 3^{4}, \dots}$<br>
+  $\displaystyle G^{2^{2}k} \mod p \equiv \zeta^{3^{0}, 3^{4}, \dots}$<br>
+  $\displaystyle G^{2^{3}k} \mod p \equiv \zeta^{3^{0}, 3^{8}, 3^{16}}$<br>
+  $\displaystyle G^{2^{4}k} \mod p \equiv \zeta^{3^{0}, 3^{16}}$<br>
+  $1 = \zeta$
+
+  basically enables us to find every even nth root of unity of $Z_{17}^{\ast}$, that is, every root of $1$. And since $\phi(17) = 16$, by Lagrange theorem we know that we will have ones only for $even$ orders and this means that finding those roots basically enables us to find every root of unity of $Z_{17}^{\ast}$. This also means that every number which doesn't appear in the set of roots will be a generator. You can try this using Zn.py, it will be quite straightforward and magical. We are basically reaching the almighty power on subgroups with this result but it's always better to keep calm because $Z_{17}^{\ast}$ is a special group because $\phi(17) = 2^{4}$. For subgroups's complex phis the reasoning will be harder for sure.
   
 </p>
 
