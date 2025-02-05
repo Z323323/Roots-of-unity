@@ -357,8 +357,8 @@ which are not real numbers.
   $x_1 = \zeta^{3^{0}} + \zeta^{3^{2}} + \dots + \zeta^{3^{14}}$<br>
   $x_2 = \zeta^{3^{1}} + \zeta^{3^{3}} + \dots + \zeta^{3^{15}}$
 
-  since we know our roots exponent term $k$ is periodic $\mod 17$, and $3$ is a generator for $Z_{17}^{*}$. Also note that $\displaystyle \frac{2i\pi}{17}$ is abstracted, $e^{n^{z}} = e^{nz}$ implied, $\zeta = e^{\frac{2i\pi}{17}}$, and $a^{p - 1} \equiv 1 \mod p$ is the same as $a^{0}$ ($3^{0} \equiv 3^{16} \mod 17$).
-
+  since we know our roots exponent term $k$ is periodic $\mod 17$.
+  
   We can see that $x_1$ terms will be such that
 
   $\zeta^{3^{2s} \mod 17}$
@@ -367,26 +367,48 @@ which are not real numbers.
 
   $\zeta^{3^{2s + 1} \mod 17}$
 
-  You might have spot that a morphism lies here. Having abstracted $\displaystyle \frac{2i\pi}{17}$ what really matters is decided by $G^{s \cdot deg\zeta} \mod 17$ where $G = 3$ here.
+  $-----$
+
+  You might have spot that a morphism lies here.
+
+  We can set every primitive root of unity for some number $n$ (thus only removing $e^{0}$ from non-primitive ones if $n$ is prime) as the set $H$ built by 
   
-  We can observe that there exist a mapping between the number of primitive roots of unity mapped by $G^{\s \cdot deg\zeta} \mod 17$ and the ones of subgroups of $Z_{17}^{\ast}$. To explain this behaviour informally, it's like if $\zeta$ represents the $17 - 1$ root of $1$ hence any element of $Z_{17}^{\ast}$, and $\zeta^{2}$ represents the $(17 - 1)/2$ root of $1$ hence any element of $Z_{17}^{\ast}$ which equal $1$ being elevated at $(17 - 1)/2$. Then the reasoning is basically the same for the other powers, that is $\zeta^{4}$ is the $(17 - 1)/4$ root of $1$, thus every element which being elevated at $(17 - 1)/4$ produce $1$ and so on until we get $16 / 16 = 1$ where the only element which being elevated at $1$ produce $1$ is obviously $1$.
+  $H = \\{\zeta^{G \mod n}, \zeta^{G^{2} \mod n}, \dots, \zeta^{G^{\phi(n)} \mod n}\\}$
 
-  $\zeta^{1} = \sqrt[17]{1} \mapsto G^{s \cdot 1} \mod 17$
+  with
 
-  indeed, if we solve for any generator $G$, and $s \geq 1$ is quite trivial to see that it will build the entire $Z_{17}$ set which has sense, since every element of the set is a $17 - 1$th root of $1$ and $17$th root of itself. If we keep at it we get
+  $|H| = \phi(n)$
 
-  $\displaystyle \zeta^{2} = \sqrt[\frac{2}{17}]{1} \mapsto G^{2s} \mod 17$
+  Also, we can further indentify that if we consider the set of the squares of the primitive roots of unity our set becomes
 
+  $H_2 = \\{\zeta^{G^{2} \mod n}, \zeta^{G^{4} \mod n}, \dots, \zeta^{G^{\phi(n)} \mod n}\\}$
+
+  that is, $\displaystyle |H_2| = \frac{|H|}{2}$. If we keep reasoning this way we get
+
+  $H_4 = \\{\zeta^{G^{4} \mod n}, \zeta^{G^{8} \mod n}, \dots, \zeta^{G^{\phi(n)} \mod n}\\}$
+
+  and $\displaystyle |H_4| = \frac{|H|}{4}$, and
+
+  $H_{\phi(n)} = \\{\zeta^{G^{\phi(n)} \mod n} = \zeta^{1} = \zeta\\}$
+
+  and 
   
+  $\displaystyle |H_{\phi(n)}| = \frac{|H|}{\phi(n)} = 1$
   
-  $\displaystyle \zeta^{2} = \sqrt[\frac{2}{17}]{1} \equiv G^{2s} \mod 17$
+  since $|H| = \phi(n)$. 
+
+  We can clearly see that there's a direct relation between sets mapping primitive roots of $n$ of degree $i$ and the $i-nt\lambda$ square roots of $1$ in $Z_{\phi(n)}^{\ast}$ which are identified by exponents of $\zeta$. Or equivalently that there is an inverse relation between the solutions of the $nt\lambda$ root of $1$ aka $\zeta_{1,2, \dots}$ being elevated at $i$ and the solutions of the $nt\lambda$ root of $1$ being elevated at $i$ in $Z_{\phi(n)}^{\ast}$. We can consider $\zeta$ being defined in $\phi(n)$ different ways if we consider the roots of unity of $Z_{\phi(n)}^{\ast}$, for which the same structure above applies for $i$ powers but inversed, that is, we know that every $\zeta$ defined in $H$ will produce $1$ at the $\phi(n)$ power in $Z_{\phi(n)}^{\ast}$, thus $Z_{\phi(n)}^{\ast}(|H_{\phi(n)}|) = \phi(n)$, and
+
+  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{1}|) = \frac{\phi(n)}{|H|} = 1$<br>
+  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{2}|) = \frac{\phi(n)}{|H_2|} = \frac{\phi(n)}{\frac{\phi(n}{2}} = 2$<br>
+  $\displaystyle Z_{\phi(n)}^{\ast}(|H_{4}|) = \frac{\phi(n)}{|H_4|} = \frac{\phi(n)}{\frac{\phi(n}{4}} = 4$
+
+  and so on.
+
+  We can go over for the moment and get back to our complex analysis.
+
+  $-----$
   
-  If we set
-
-  $\zeta^{y} \equiv G^{2}$
-
-  which basically means that the $nt\lambda$ root of any
-   
   What really interests us here is that this means that $x_1$ and $x_2$ will contain pairs of roots being each other conjugates. 
 
   The complex conjugate of a complex number $z = x + iy$ is defined as
