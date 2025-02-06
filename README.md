@@ -371,7 +371,7 @@ which are not real numbers.
 
   $-----$
 
-  You might have spot that a morphism lies here.
+  You might have already spot that our relation with multiplicative groups lies here.
 
   We can set every primitive root of unity for some number $n$ (thus only removing $e^{0}$ from non-primitive ones if $n$ is prime) as the set $H$ built by 
   
