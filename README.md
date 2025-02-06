@@ -17,7 +17,7 @@ $z^{n} - 1 = 0$
 $->$<br>
 $z = \sqrt[n]{1}$
 
-Finding the roots of unity or the primitive roots of unity is in general a complex problem, but we are not really interested in complex analysis while on the morphism between the primitive roots of unity in the complex plane and the roots of unity in multiplicative subgroups. Nonetheless I'll delve both in order to complete the Stanford cryptography course and because it's important to understand where they come from. You might have guessed that finding the roots of unity in multiplicative groups will basically enable us to find generators for every multiplicative subgroup (which I thought was an impossible thing before delving this topic).
+Finding the roots of unity or the primitive roots of unity is in general a complex problem. We are not really interested in complex analysis while on the relation between the primitive roots of unity in the complex plane and the roots of unity in multiplicative subgroups. Nonetheless I'll delve both in order to complete the Stanford cryptography course and because it's important to understand the linkage. You might have guessed that finding the roots of unity in multiplicative groups will basically enable us to find generators for every multiplicative subgroup (which I thought was an impossible thing before delving this topic).
 
 </p>
 
