@@ -17,6 +17,8 @@ $z^{n} - 1 = 0$
 $->$<br>
 $z = \sqrt[n]{1}$
 
+Finding the roots of unity or the primitive roots of unity is in general a complex problem, but we are not really interested in complex analysis while on the morphism between the primitive roots of unity in the complex plane and the roots of unity in multiplicative subgroups. Nonetheless I'll delve both in order to complete the Stanford cryptography course and because it's important to understand where they come from. You might have guessed that finding the roots of unity in multiplicative groups will basically enable us to find generators for every multiplicative subgroup (which I thought was an impossible thing before delving this topic).
+
 </p>
 
 ## Cyclotomic equations
@@ -328,13 +330,13 @@ which are not real numbers.
   
 </p>
 
-## Gauss' heptadecagon and gaussian periods
+## Obtaining the almighty power on multiplicative groups analysing Gauss' heptadecagon and gaussian periods
 
 <p>
   Refer to [https://crypto.stanford.edu/pbc/notes/numbertheory/17gon.html], [https://crypto.stanford.edu/pbc/notes/numbertheory/gaussperiod.html], and [https://s3.us-east-1.amazonaws.com/sjcdigitalarchives/original/4076cf9a600178cf678478821f331c65.pdf].
   The two linked resources about the heptadecagon are the exact opposite approach to solve the same problem, that is, one is formal and the other one is raw. I felt free to steal a couple of images from the second link because they were really well made and important (hope this won't be a problem).
   
-  When he was a teenager Gauss found a clever way to compute primitive roots of unity while trying to draw an heptadecagon using a straight-edge and a compass. What we are really interested in is not to draw the heptadecagon but to generalize the tactic Gauss used to find the primitive roots of unity, and extract some valuable results.
+  When he was a teenager Gauss found a clever way to compute primitive roots of unity while trying to draw an heptadecagon using a straight-edge and a compass. What we are really interested in is not to draw the heptadecagon but to generalize the tactic Gauss used to find the primitive roots of unity, and extract some valuable results which include the main result we are interested in.
 
   $x^{17} - 1 = 0$<br>
   $->$<br>
@@ -405,19 +407,21 @@ which are not real numbers.
 
   We can clearly see that there is a direct relation between the primitive roots of unity of $n$, that is, $\zeta_{1,2, \dots}$, and the roots of unity of $\phi(n)$ in $Z_{\phi(n)}^{\ast}$. This means that computing the squares for the primitive roots of unity of $n$ is the same as finding the roots of unity of $\displaystyle \frac{\phi(n)}{2}$ in $Z_{\phi(n)}^{\ast}$ because
 
-  $\displaystyle (root_{\phi(n)}(n))^{2} = root_{\frac{\phi(n)}{2}}(n)$
+  $\displaystyle (sqrt[\phi(n)]\\{n\\})^{2} = sqrt[\frac{\phi(n)}{2}]\\{n\\}$
 
   I had to use this form for the root because the rendering of the root symbol is messed up in Markdown.
 
-  We can conclude that our resulting set of exponents for $H_2$ represents the roots of unity of $\frac{\phi(n)}{2}$ in $Z_{\phi(n)}^{\ast}$. If we keep making the square or cube or quartic or quintic or whatever number we know divides $\phi(n)$ we can basically get every generator for any subgroup of $Z_{\phi(n)}^{\ast}$ as long as we know the divisors, but note that in order to know the generators for a subgroup of order $o | \phi(n)$ we won't compute $H_o$, instead, we will need to do
+  We can conclude that our resulting set of exponents for $H_2$ represents the roots of unity of $\frac{\phi(n)}{2}$ in $Z_{\phi(n)}^{\ast}$. If we keep making the square or cube or quartic or quintic or whatever number we know divides $\phi(n)$ we can basically get every generator for any subgroup of $Z_{\phi(n)}^{\ast}$ as long as we know the divisors, but note that in order to know the generators for a subgroup of order $o | \phi(n)$ we won't compute $H_o$, instead, we will need to compute
 
   $\displaystyle \frac{\phi(n)}{o} = o_r$
 
   and then compute $H_{o_{r}}$, because
 
-  $\displaystyle (root_{\phi(n)}(n))^{o_r} = root_{\frac{\phi(n)}{o_r}}(n) = root_{o}(n)$
+  $\displaystyle (sqrt[\phi(n)]\\{n\\})^{o_r} = sqrt[\frac{\phi(n)}{o_r}]\\{n\\} = sqrt[o]\\{n\\}$
 
-  #### Ex. $p = 79$
+  Also, we know that the roots of unity will include $1$ because $1$ is always a solution, hence to get the generators for some subgroup we will exclude $G^{\phi(n)} \mod n$ because we know it will only generate the $\\{1\\}$ set. 
+
+  #### Ex $p = 79$
 
   $\phi(79) = 78$<br>
   $78 = 2 \cdot 3 \cdot 13$
@@ -426,12 +430,15 @@ which are not real numbers.
 
   $\displaystyle \frac{\phi(n)}{o} = o_r = \frac{78}{13} = 6$<br>
   $->$<br>
-  $H_{6} = \\{G^{6} \mod 79, G^{12} \mod 79, G^{18} \mod 79, \dots, G^{78} \equiv 1 \mod 78\\}$
+  $H_{6} = \\{G^{6} \mod 79, G^{12} \mod 79, G^{18} \mod 79, \dots, G^{78 - 6} \mod 78\\}$
 
   We have $3$ as generator for $Z_{79}^{\ast}$ hence
 
-  $H_{6} = \\{3^{6} \mod 79, 3^{12} \mod 79, 3^{18} \mod 79, \dots, 3^{78} \equiv 1 \mod 78\\}$<br>
-  $H_{6} = \\{18, 8, 65, 64, 46, 38, 52, 67, 21, 62, 10, 22, 1}$<br>
+  $H_{6} = \\{3^{6} \mod 79, 3^{12} \mod 79, 3^{18} \mod 79, \dots, 3^{78 - 6} \mod 78\\}$<br>
+  $->$<br>
+  $H_{6} = \\{18, 8, 65, 64, 46, 38, 52, 67, 21, 62, 10, 22\\}$
+
+  If you check this result you'll find out we just got the almighty power on multiplicative subgroups.
   
   Now we can get back to our complex analysis.
 
@@ -577,18 +584,20 @@ which are not real numbers.
   $\displaystyle \zeta = \zeta^{16} = \cos(\frac{2\pi}{17})$
 
   which is quite disappointing since I could have derived this without all other effort :'), but we learnt something for sure.
-
-  Let's now try to extract something valuable for our beloved multiplicative groups. 
-  
-  Let $p = 17, k \geq 0$, and $G$ some generator for $Z_{17}^{\ast}$, computing
-
-  $\displaystyle G^{2^{1}k} \mod p \equiv \zeta^{3^{0}, 3^{2}, 3^{4}, \dots}$<br>
-  $\displaystyle G^{2^{2}k} \mod p \equiv \zeta^{3^{0}, 3^{4}, \dots}$<br>
-  $\displaystyle G^{2^{3}k} \mod p \equiv \zeta^{3^{0}, 3^{8}, 3^{16}}$<br>
-  $\displaystyle G^{2^{4}k} \mod p \equiv \zeta^{3^{0}, 3^{16}}$<br>
-  $1 = \zeta$
-
-  basically enables us to find every even nth root of unity of $Z_{17}^{\ast}$, that is, every root of $1 \mod 17$. And since $\phi(17) = 2^{4}$, by Lagrange theorem we know that we will have ones only for $even$ orders and this means that finding those roots basically enables us to find every root of unity of $Z_{17}^{\ast}$. This also means that every number which doesn't appear in the set of roots will be a generator. You can try this using Zn.py, it will be quite straightforward and magical. We are basically reaching the almighty power on subgroups with this result but it's always better to keep calm because $Z_{17}^{\ast}$ is a special group since $\phi(17) = 2^{4}$. For groups' complex phis the reasoning will be harder for sure.
   
 </p>
+
+## Eisenstein irreducibility criterion and Gauss' extension lemma
+
+<p>
+  
+  Refer to [https://crypto.stanford.edu/pbc/notes/numbertheory/eisenstein.html].
+
+  Eisenstein criterion has a cryptic statement, but I guess (don't take me for granted I may be wrong) it basically states that having a polynomial $P(x)$, if we don't have a prime $p$ which divides the whole polynomial's terms coefficients, then $P(x)$ is irreducible over the integers, that is, it won't exist any integer divisor for the polynomial, nor another polynomial which divides it. The clarification $p^{2} \nmid a_1$ I guess is to set the structure of $P(x)$, that is, it will follow the proof structure, I'm not sure by the way, there may be some other reason because I guess the proof holds even if $p^{2} | a_1$. The proof proceeds proving that having a polynomial defined as the multiplication of two polynomials where one of them is divisible by $p$, it must be that $p$ divides $a_{n}$ therefore proving that if we don't have such $p$ then the polynomial is irreducible (but again, I might be wrong, verify).
+
+  Gauss' lemma basically extends the proof by stating that a polynomial is irreducible over integers iff it is irreducible over the rationals. This means that if we manage to prove that a polynomial is irreducible over the integers it will be irreducible over the rationals too.
+  
+</p>
+
+## 
 
