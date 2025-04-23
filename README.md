@@ -252,88 +252,91 @@ which are not real numbers.
 
   thus, $\forall n > m$ such that $n$ has $m$ as cofactor, $n$ will share the same roots of $m$.
   
-  Now, let's set the hypothesis of $q^{2}$ being a cofactor, then $q$ will be a cofactor too and
+  Now, consider
 
   $n_1 = q^{2}$<br>
-  $n_2 = q^{2}xyz$
+  $n_2 = qxyz$
 
   and
 
   $\displaystyle \frac{k_{1}}{q^{2}}$<br>
   $and$<br>
-  $\displaystyle \frac{k_{2}}{q^{2}xyz}$
+  $\displaystyle \frac{k_{2}}{qxyz}$
   
   Therefore
 
-  $\displaystyle root_{xyz + 1}(n_{2}) = \frac{1}{q^{2}} = root_{1 + 1}(n_{1})$
+  $\displaystyle root_{xyz + 1}(n_{2}) = \frac{1}{q} = root_{q + 1}(n_{1})$
   
-  for some $k_{2} = xyz, k_{1} = 1$, and
+  for some $k_{2} = xyz, k_{1} = q$.
 
-  $\displaystyle root_{qxyz + 1}(n_{2}) = \frac{1}{q} = root_{q + 1}(n_{1})$
+  Also, for $k_{2} = Xxyz, 1 \leq X \leq q, k_{1} = Yq, 1 \leq Y \leq q$
 
-  for some $k_{2} = qxyz, k_{1} = q$.
+  $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{qxyz} = \frac{k_{1}}{q^{2}} = root_{k_{1} + 1}(n_{1})$
+  
+  We define the **primitive roots of unity** of $n$ as the roots of unity which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because the non-primitive roots of unity will have appeared for every $m < n$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
 
-  Also, for $k_{2} = Xxyz, 1 \leq X \leq q^{2}$
+  Let's see another example to further clarify $\phi(n)$. Let $n = 12$. We have $1, 2, 3, 4, 6$ which are cofactors, indeed [ skipping $m = 1$ and subtracting $1$ in advance to $12$ where $1 = \phi(1)$, so let's set the counter at $11$ ]
 
-  $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{q^{2}xyz} = \frac{k_{1}}{q^{2}} = root_{k_{1} + 1}(n_{1})$
-
-
-  We define the **primitive roots of unity** of $n$ as the roots of unity which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because the  non-primitive roots of unity will have appeared for every $m < n$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
-
-  Let's see another example to further clarify $\phi(n)$. Let $n_2 = 12$. We have $1, 2, 3, 4, 6$ which are cofactors, indeed (skipping $n_1 = 1$ and adding $1$ in advance to the result where $\phi(1) = 1$)
-
-  $n_1 = 2$<br>
-  $n_2 = 12$<br>
+  $m = 2$<br>
+  $n = 12$<br>
   $->$<br>
-  $\displaystyle root_{1 + 1} = \frac{1}{2}$<br>
-  $\displaystyle root_{6 + 1} = \frac{1}{2}$
+  $\displaystyle root_{1 + 1}(m) = \frac{1}{2}$<br>
+  $\displaystyle root_{6 + 1}(n) = \frac{1}{2}$
 
-  and $\phi(2) = 1$. [ remember $\phi(2)$ etc. will refer to the primitive roots of unity considering every $m < n$, in this case the only $m < 2$ is $1$, indeed the only primitive root of $2$ is $\frac{1}{2}$. The number appearing below has been set to show the comparison with the primitive roots of unity of $12$, which as you can see will be subtracted from $12$ cofactor after cofactor, i.e. $2$ is a cofactor of $12$ and will decrease the number of primitive roots of $12$ by $1$ because the already appeared for $m < n$, that is $2 < 12$, since $2$ is a cofactor of $12$. This is exactly the behaviour of the $\phi$ function. ].
-
-  $n_1 = 3$<br>
-  $n_2 = 12$<br>
+  indeed $\phi(2) = 1$<br>
   $->$<br>
-  $\displaystyle root_{1 + 1} = \frac{1}{3}$<br>
-  $\displaystyle root_{4 + 1} = \frac{1}{3}$
+  $11 - 1 = 10$
+  
+  [ remember $\phi(2)$ etc. will refer to the primitive roots of unity considering every $m < n$, in turn, every $m$ will have some $w$ such that $w < m$ so in this case the only $w < 2$ is $1$, indeed the only primitive root of $2$ is $\frac{1}{2}$. The number appearing below has been set to show the comparison with the primitive roots of unity of $12$ and the primitive roots of every $m < 12$, which as you can see will be subtracted from $12$ cofactor after cofactor, i.e. $2$ is a cofactor of $12$ and will decrease the number of primitive roots of $12$ by $1$ because the already appeared for $m < n$, that is $2 < 12$, since $2$ is a cofactor of $12$. This is exactly the behaviour of the $\phi$ function. ].
+
+  $m = 3$<br>
+  $n = 12$<br>
+  $->$<br>
+  $\displaystyle root_{1 + 1}(m) = \frac{1}{3}$<br>
+  $\displaystyle root_{4 + 1}(n) = \frac{1}{3}$
 
   and
  
-  $\displaystyle root_{2 + 1} = \frac{2}{3}$<br>
-  $\displaystyle root_{8 + 1} = \frac{8}{12} = \frac{2}{3}$
+  $\displaystyle root_{2 + 1}(m) = \frac{2}{3}$<br>
+  $\displaystyle root_{8 + 1}(n) = \frac{8}{12} = \frac{2}{3}$
 
   [ remember that I'm considering the first root with $k = 0$, this means that the last root won't be $root_{n - 1}$ but $root_{n}$ ]
 
-  and $\phi(3) = 2$.
-
-  $n_1 = 4$<br>
-  $n_2 = 12$<br>
+  indeed $\phi(3) = 2$<br>
   $->$<br>
-  $\displaystyle root_{1 + 1} = \frac{1}{4}$<br>
-  $\displaystyle root_{3 + 1} = \frac{1}{4}$
+  $10 - 2 = 8$
+
+  $m = 4$<br>
+  $n = 12$<br>
+  $->$<br>
+  $\displaystyle root_{1 + 1}(m) = \frac{1}{4}$<br>
+  $\displaystyle root_{3 + 1}(n) = \frac{1}{4}$
 
   and
 
-  $\displaystyle root_{3 + 1} = \frac{3}{4}$<br>
-  $\displaystyle root_{9 + 1} = \frac{9}{12} = \frac{3}{4}$
+  $\displaystyle root_{3 + 1}(m) = \frac{3}{4}$<br>
+  $\displaystyle root_{9 + 1}(n) = \frac{9}{12} = \frac{3}{4}$
 
-  and $\phi(4) = 2$, because $\phi(2^{2}) = 2^{2} - 2 = 2$.
-
-  $n_1 = 6$<br>
-  $n_2 = 12$<br>
+  indeed $\phi(4) = 2$, because $\phi(2^{2}) = 2^{2} - 2 = 2$<br>
   $->$<br>
-  $\displaystyle root_{1 + 1} = \frac{1}{6}$<br>
-  $\displaystyle root_{2 + 1} = \frac{1}{6}$
+  $8 - 2 = 6$
+
+  $m = 6$<br>
+  $n = 12$<br>
+  $->$<br>
+  $\displaystyle root_{1 + 1}(m) = \frac{1}{6}$<br>
+  $\displaystyle root_{2 + 1}(n) = \frac{1}{6}$
 
   and
 
-  $\displaystyle root_{5 + 1} = \frac{5}{6}$<br>
-  $\displaystyle root_{10 + 1} = \frac{10}{12} = \frac{5}{6}$
+  $\displaystyle root_{5 + 1}(m) = \frac{5}{6}$<br>
+  $\displaystyle root_{10 + 1}(n) = \frac{10}{12} = \frac{5}{6}$
 
-  and $\phi(6) = \phi(2)\phi(3) = 2$.
+  indeed $\phi(6) = \phi(2)\phi(3) = 2$<br>
+  $->$<br>
+  $6 - 2 = 4$
 
   As you can see, this is a concatenation of reasons which starts at $1$, indeed every number share the first root, then every even number will share the $n = 2$ roots, then every number which is multiple of $3$ and $2$ will share the $2$ and $3$ roots, which in turn share the $1$ root, and since the $\phi(n)$ function keeps track of this because it's multiplicative then the result follows.
-
-  It results now clear that for $n$ which is prime, we will have $\phi(n) = n - 1$ primitive roots of unity, and for $n = qp$ where $q, p$ are primes or simply $gcd(q, p) = 1$ we will have for every $q, p$ primitive root, a corresponding $qp$ primitive root (this is the same as saying there will be $\phi(q)\phi(p)$ primitive roots). 
 
   We can conclude by seeing that 
 
