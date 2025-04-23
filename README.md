@@ -229,26 +229,26 @@ which are not real numbers.
 
   Now the process should be more than clear. We can abstract $2i\pi$ for a moment and consider only $k$ and $n$ since the former will be constant.
 
-  Now, consider two different numbers sharing some cofactor $q$ which will map $n_{1}$ and $n_{2}$ roots of unity. We'd have
+  Now, consider two different numbers sharing some cofactor $q$ which will map $n_{1}$ and $n_{2}$ roots of unity. We'd have for example
 
-  $n_1 = qx$<br>
-  $n_2 = qy$
+  $n_1 = q$<br>
+  $n_2 = qxyz$
 
-  Now
+  and
 
-  $\displaystyle \frac{k_{1}}{qx}$<br>
+  $\displaystyle \frac{k_{1}}{q}$<br>
   $and$<br>
-  $\displaystyle \frac{k_{2}}{qy}$
+  $\displaystyle \frac{k_{2}}{qxyz}$
   
-  We have
+  Therefore
 
-  $\displaystyle root_{x + 1} = \frac{1}{q}$ 
+  $\displaystyle root_{xyz + 1}(n_{2}) = \frac{1}{q} = root_{1 + 1}(n_{1})$
   
-  for some $k_{1} = x$, and
-  
-  $\displaystyle root_{y + 1} = \frac{1}{q}$
-  
-  for some $k_{2} = y$. [ $+ 1$ is because we start at $k = 0$ ].
+  for some $k_{2} = xyz, k_{1} = 1$. [ $+ 1$ is because we start at $k = 0$, so $root_{1} = 0, root_{2} = \frac{1}{q}, root_{3} = \frac{2}{q}$ and so on ].
+
+  and also, for $1 \leq k_{1} \leq q - 1, xyz \leq k_{2} \leq xyz + (q - 1)$
+
+  $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{q} = \frac{k_{1}}{q} = root_{k_{1} + 1}(n_{1})$
 
   Now, let's set the hypothesis of $q^{2}$ being a cofactor, then $q$ will be a cofactor too and
 
@@ -273,7 +273,7 @@ which are not real numbers.
   $\displaystyle root_{1 + 1} = \frac{1}{2}$<br>
   $\displaystyle root_{6 + 1} = \frac{1}{2}$
 
-  and $\phi(2) = 1$.
+  and $\phi(2) = 1$. [ remember $\phi(2)$ etc. will refer to the primitive roots of unity considering every $m < n$, in this case the only $m < 2$ is $1$, indeed the only primitive root of $2$ is $\frac{1}{2}$. The number appearing below has been set to show the comparison with the primitive roots of unity of $12$, which as you can see will be subtracted from $12$ cofactor after cofactor, i.e. $2$ is a cofactor of $12$ and will decrease the number of primitive roots of $12$ by $1$ because the already appeared for $m < n$, that is $2 < 12$, since $2$ is a cofactor of $12$. This is exactly the behaviour of the $\phi$ function. ].
 
   $n_1 = 3$<br>
   $n_2 = 12$<br>
@@ -286,7 +286,7 @@ which are not real numbers.
   $\displaystyle root_{2 + 1} = \frac{2}{3}$<br>
   $\displaystyle root_{8 + 1} = \frac{8}{12} = \frac{2}{3}$
 
-  (remember that I'm considering the first root with $k = 0$, this means that the last root won't be $root_{n - 1}$ but $root_{n}$)
+  [ remember that I'm considering the first root with $k = 0$, this means that the last root won't be $root_{n - 1}$ but $root_{n}$ ]
 
   and $\phi(3) = 2$.
 
