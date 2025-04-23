@@ -244,24 +244,39 @@ which are not real numbers.
 
   $\displaystyle root_{xyz + 1}(n_{2}) = \frac{1}{q} = root_{1 + 1}(n_{1})$
   
-  for some $k_{2} = xyz, k_{1} = 1$. [ $+ 1$ is because we start at $k = 0$, so $root_{1} = 0, root_{2} = \frac{1}{q}, root_{3} = \frac{2}{q}$ and so on ].
+  for some $k_{2} = xyz, k_{1} = 1$. [ $+ 1$ is because we start at $k = 0$, so for ex. $root_{1} = 0, root_{2} = \frac{1}{q}, root_{3} = \frac{2}{q}$ and so on ].
 
-  and also, for $1 \leq k_{1} \leq q - 1, xyz \leq k_{2} \leq xyz + (q - 1)$
+  Also, for $1 \leq k_{1} \leq q - 1, xyz \leq k_{2} \leq xyz + (q - 1)$
 
   $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{q} = \frac{k_{1}}{q} = root_{k_{1} + 1}(n_{1})$
 
+  thus, $\forall n > m$ such that $n$ has $m$ as cofactor, $n$ will share the same roots of $m$.
+  
   Now, let's set the hypothesis of $q^{2}$ being a cofactor, then $q$ will be a cofactor too and
 
-  $n_1 = q^{2}x$<br>
-  $n_2 = q^{2}y$<br>
+  $n_1 = q^{2}$<br>
+  $n_2 = q^{2}xyz$
 
-  $->$
-  
-  $\displaystyle root_{x + 1} = \frac{1}{q^{2}}$<br>
-  $\displaystyle root_{y + 1} = \frac{1}{q^{2}}$<br>
+  and
+
+  $\displaystyle \frac{k_{1}}{q^{2}}$<br>
   $and$<br>
-  $\displaystyle root_{xq + 1} = \frac{1}{q}$<br>
-  $\displaystyle root_{yq + 1} = \frac{1}{q}$
+  $\displaystyle \frac{k_{2}}{q^{2}xyz}$
+  
+  Therefore
+
+  $\displaystyle root_{xyz + 1}(n_{2}) = \frac{1}{q^{2}} = root_{1 + 1}(n_{1})$
+  
+  for some $k_{2} = xyz, k_{1} = 1$, and
+
+  $\displaystyle root_{qxyz + 1}(n_{2}) = \frac{1}{q} = root_{q + 1}(n_{1})$
+
+  for some $k_{2} = qxyz, k_{1} = q$.
+
+  Therefore, for $1 \leq k_{1} \leq q^{2} - 1, xyz \leq k_{2} \leq xyz + (q^{2} - 1)$
+
+  $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{q^{2}} = \frac{k_{1}}{q^{2}} = root_{k_{1} + 1}(n_{1})$
+
 
   We define the **primitive roots of unity** of $n$ as the roots of unity which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because the  non-primitive roots of unity will have appeared for every $m < n$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
 
