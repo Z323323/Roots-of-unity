@@ -246,7 +246,7 @@ which are not real numbers.
   
   for some $k_{2} = xyz, k_{1} = 1$. [ $+ 1$ is because we start at $k = 0$, so for ex. $root_{1} = 0, root_{2} = \frac{1}{q}, root_{3} = \frac{2}{q}$ and so on ].
 
-  Also, for $k_{2} = Xxyz, 1 \leq X \leq q - 1$
+  Also, for $k_{2} = Xxyz, 1 \leq X \leq q$
 
   $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{qxyz} = \frac{k_{1}}{q} = root_{k_{1} + 1}(n_{1})$
 
@@ -273,7 +273,7 @@ which are not real numbers.
 
   for some $k_{2} = qxyz, k_{1} = q$.
 
-  Also, for $k_{2} = Xxyz, 1 \leq X \leq q^{2} - 1$
+  Also, for $k_{2} = Xxyz, 1 \leq X \leq q^{2}$
 
   $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{q^{2}xyz} = \frac{k_{1}}{q^{2}} = root_{k_{1} + 1}(n_{1})$
 
