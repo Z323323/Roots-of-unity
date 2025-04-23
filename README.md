@@ -246,9 +246,9 @@ which are not real numbers.
   
   for some $k_{2} = xyz, k_{1} = 1$. [ $+ 1$ is because we start at $k = 0$, so for ex. $root_{1} = 0, root_{2} = \frac{1}{q}, root_{3} = \frac{2}{q}$ and so on ].
 
-  Also, for $1 \leq k_{1} \leq q - 1, xyz \leq k_{2} \leq xyz + (q - 1)$
+  Also, for $k_{2} = Xxyz, 1 \leq X \leq q - 1$
 
-  $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{q} = \frac{k_{1}}{q} = root_{k_{1} + 1}(n_{1})$
+  $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{qxyz} = \frac{k_{1}}{q} = root_{k_{1} + 1}(n_{1})$
 
   thus, $\forall n > m$ such that $n$ has $m$ as cofactor, $n$ will share the same roots of $m$.
   
@@ -273,9 +273,9 @@ which are not real numbers.
 
   for some $k_{2} = qxyz, k_{1} = q$.
 
-  Therefore, for $1 \leq k_{1} \leq q^{2} - 1, xyz \leq k_{2} \leq xyz + (q^{2} - 1)$
+  Also, for $k_{2} = Xxyz, 1 \leq X \leq q^{2} - 1$
 
-  $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{q^{2}} = \frac{k_{1}}{q^{2}} = root_{k_{1} + 1}(n_{1})$
+  $\displaystyle root_{k_{2} + 1}(n_{2}) = \frac{k_{2}}{q^{2}xyz} = \frac{k_{1}}{q^{2}} = root_{k_{1} + 1}(n_{1})$
 
 
   We define the **primitive roots of unity** of $n$ as the roots of unity which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because the  non-primitive roots of unity will have appeared for every $m < n$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
