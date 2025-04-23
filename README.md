@@ -229,26 +229,26 @@ which are not real numbers.
 
   Now the process should be more than clear. We can abstract $2i\pi$ for a moment and consider only $k$ and $n$ since the former will be constant.
 
-  Now, consider $n_1, n_2$ sharing some cofactor $q$ and $n_2 > n_1$, let
+  Now, consider two different numbers sharing some cofactor $q$ which will map $n_{1}$ and $n_{2}$ roots of unity. We'd have
 
   $n_1 = qx$<br>
   $n_2 = qy$
 
-  then consider
+  Now
 
-  $\displaystyle \frac{k}{qx}$<br>
+  $\displaystyle \frac{k_{1}}{qx}$<br>
   $and$<br>
-  $\displaystyle \frac{k}{qy}$
+  $\displaystyle \frac{k_{2}}{qy}$
   
-  For two different $k$ (which we know they will be verified since $k$ ranges from $0$ to $n_1 - 1$, and $n_2 - 1$) we will necessarily have
+  We have
 
   $\displaystyle root_{x + 1} = \frac{1}{q}$ 
   
-  for $n_1 = qx$, and
+  for some $k_{1} = x$, and
   
   $\displaystyle root_{y + 1} = \frac{1}{q}$
   
-  for $n_2 = qy$, where $+ 1$ is because we start at $k = 0$.
+  for some $k_{2} = y$. [ $+ 1$ is because we start at $k = 0$ ].
 
   Now, let's set the hypothesis of $q^{2}$ being a cofactor, then $q$ will be a cofactor too and
 
@@ -263,7 +263,7 @@ which are not real numbers.
   $\displaystyle root_{xq + 1} = \frac{1}{q}$<br>
   $\displaystyle root_{yq + 1} = \frac{1}{q}$
 
-  We define the primitive roots of unity of $n$ as the roots of unity which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because the  non-primitive roots of unity will have appeared for every $m < n$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
+  We define the **primitive roots of unity** of $n$ as the roots of unity which didn't already appear for some $m < n$. This means that in general, the primitive roots of unity of $n$ are $\phi(n)$, because the  non-primitive roots of unity will have appeared for every $m < n$ which share some cofactor with $n$. Since we are considering only the numbers $< n$, and the numbers which do not share cofactors with $n$ are coprimes $< n$, the result $\phi(n)$ follows.
 
   Let's see another example to further clarify $\phi(n)$. Let $n_2 = 12$. We have $1, 2, 3, 4, 6$ which are cofactors, indeed (skipping $n_1 = 1$ and adding $1$ in advance to the result where $\phi(1) = 1$)
 
