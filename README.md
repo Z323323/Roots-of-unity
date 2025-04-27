@@ -173,7 +173,7 @@ which are not real numbers.
   $\dots$<br>
   $\displaystyle \theta_{n} = \frac{(n - 1)2\pi}{n}$
 
-  Now we can further analyze the previous cases being aware $z^{n} = 1$ is a pure complex number.
+  Now we can further analyze the previous cases being aware $z$ is a pure complex number.
 
   $n = 1$<br>
   $->$<br>
