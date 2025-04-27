@@ -154,13 +154,9 @@ which are not real numbers.
   - $|z|^{n} = 1$
   - - $|z| = 1$ because $|z|$ is obtained only considering the real part of $z$, and the real part gets squared (hence it can't be $- 1$).
   - $\cos(n(\theta + 2k\pi)) + i\sin(n(\theta + 2k\pi)) = 1$
-  - - $\cos(n(\theta + 2k\pi)) + i\sin(n(\theta + 2k\pi)) = e^{i2k\pi}$
-   
-  that is
+  - - $\cos(n(\theta + 2k\pi)) + i\sin(n(\theta + 2k\pi)) = e^{i2\pi} = 1$
 
-  $z^{n} = 1 \cdot e^{i2k\pi} = e^{i2k\pi} = 1$
-
-  This means that $z^{n}$ is a pure complex number and finding the roots of unity narrows to
+  Now we know $z$ is a pure complex number of real part which equals $1$, and therefore finding the roots of unity narrows to
 
   $\displaystyle \cos(\frac{2k\pi}{n}) + i\sin(\frac{2k\pi}{n}) = e^{\frac{i2k\pi}{n}}$
 
@@ -227,7 +223,7 @@ which are not real numbers.
 
   ![4](./4.jpg)
 
-  Now the process should be more than clear. We can abstract $2i\pi$ for a moment and consider only $k$ and $n$ since the former will be constant.
+  Now the process should be more than clear. We can abstract $2i\pi$ for a moment and consider only $k$ and $n$ since the former will be constant [ for which will hold $k \equiv r \mod n$ ].
 
   Now, consider two different numbers sharing some cofactor $q$ which will map $n_{1}$ and $n_{2}$ roots of unity. We'd have for example
 
