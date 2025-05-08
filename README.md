@@ -608,7 +608,7 @@ which are not real numbers.
 
   $\displaystyle \zeta = \zeta^{16} = \cos(\frac{2\pi}{17})$
 
-  which is quite disappointing since I could have derived this without all other effort :'), but we learnt something for sure.
+  Why all of this is so important? Because we see that the actual values of roots of unity is actually only dependent on $cos$.
   
 </p>
 
